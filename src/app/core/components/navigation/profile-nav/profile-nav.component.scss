@@ -1,7 +1,7 @@
 $link-color: #fff;
 $menu-background-color: #313131;
-$hover-text: #b6b6b6;
-$hover-background-desktop: #282828;
+$hover-text: #313131;
+$hover-background-desktop: #b5de1e;
 $mobile-menu-background-color: #fff;
 
 a {
@@ -24,7 +24,7 @@ a:hover {
 }
 
 .login-btn:hover {
-  background-color: #282828;
+  background-color: #b1db1c;
 }
 
 .login-btn:hover .profile-buttons {
@@ -71,10 +71,10 @@ a:hover {
   float: inherit;
   width: 250%;
   height: 40px;
-  background-color: #282828;
+  background-color: #b1db1c;
   position: relative;
   z-index: 100;
-  border-top: 1px dotted #737373;
+  border-top: 1px dotted #9dc915;
   outline: none;
   padding-left: 10px;
   padding-top: 0;

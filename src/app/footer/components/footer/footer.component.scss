@@ -1,6 +1,6 @@
 $content-margin-desktop: -15%;
 $content-margin-mobile: -3%;
-$bg-color: #282828;
+$bg-color: #b5de1e;
 $font-color: #cccccc;
 $accent-color: #888;
 
@@ -20,7 +20,7 @@ p { color: $font-color }
 #footer {
   margin-top: 32px;
   height: 235px;
-  background-color: #282828;
+  background-color: $bg-color;
   overflow: hidden;
 }
 
