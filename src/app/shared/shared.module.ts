@@ -27,7 +27,6 @@ import {MaxValueDirectiveDirective} from './directives/max-value-directive.direc
 import {UserService} from './services/user.service';
 import {AuthService} from './services/auth.service';
 import {ImageUploadService} from './services/image-upload.service';
-import {HoursService} from './services/hours.service';
 import {LinkService} from './services/link.service';
 
 @NgModule({
@@ -85,7 +84,6 @@ import {LinkService} from './services/link.service';
     UserService,
     AuthService,
     ImageUploadService,
-    HoursService,
     LinkService
   ]
 })

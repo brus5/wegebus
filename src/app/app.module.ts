@@ -8,13 +8,10 @@ import {SharedModule} from './shared/shared.module';
 import {MaterialModule} from './shared/material.module';
 import {ThirdPartyModule} from './shared/third.party.module';
 import {HomeModule} from './home/home.module';
-import {UserModule} from './user/user.module';
-import {DietModule} from './diet/diet.module';
 import {ProductModule} from './product/product.module';
 import {AdminModule} from './admin/admin.module';
 import {FooterModule} from './footer/footer.module';
 import {NewsModule} from './news/news.module';
-import {CalculatorModule} from './calculator/calculator.module';
 import {AboutusModule} from './aboutus/aboutus.module';
 import {HelpModule} from './help/help.module';
 import {ContactModule} from './contact/contact.module';
@@ -42,13 +39,10 @@ registerLocaleData(localePl);
     MaterialModule,
     ThirdPartyModule,
     HomeModule,
-    UserModule,
-    DietModule,
     ProductModule,
     AdminModule,
     FooterModule,
     NewsModule,
-    CalculatorModule,
     AboutusModule,
     HelpModule,
     ContactModule,

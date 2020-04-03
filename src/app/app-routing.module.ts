@@ -3,13 +3,9 @@ import {Routes, RouterModule, Router} from '@angular/router';
 
 import {HomeComponent} from './home/components/home/home.component';
 import {LoginComponent} from './core/components/login/login.component';
-import {DietComponent} from './diet/components/diet/diet.component';
-import {DietHoursComponent} from './diet/components/diet-hours/diet-hours.component';
-import {CaloriesCalculatorComponent} from './calculator/components/calories-calculator/calories-calculator.component';
 import {LogoffComponent} from './core/components/logoff/logoff.component';
 import {AuthGuardService} from './shared/services/auth-guard.service';
 import {ProductsComponent} from './product/components/products/products.component';
-import {DietOptionsComponent} from './user/components/diet-options/diet-options.component';
 import {ProductsWaitingRoomComponent} from './admin/components/products-waiting-room/products-waiting-room.component';
 import {AdminGuardService} from './shared/services/admin-guard.service';
 import {NewsFormComponent} from './news/components/news-form/news-form.component';
@@ -40,33 +36,10 @@ const routes: Routes = [
     component: LogoffComponent
   },
   {
-    path: 'godziny-posilkow',
-    component: DietHoursComponent,
-    canActivate: [AuthGuardService],
-    data: {title: 'Godziny posiłków'}
-  },
-  {
-    path: 'opcje-diety',
-    component: DietOptionsComponent,
-    canActivate: [AuthGuardService],
-    data: {title: 'Opcje diety'}
-  },
-  {
     path: 'poczekalnia-produktow',
     component: ProductsWaitingRoomComponent,
     canActivate: [AuthGuardService, AdminGuardService],
     data: {title: 'Poczekalnia produktów'}
-  },
-  {
-    path: 'kalkulator-kalorii',
-    component: CaloriesCalculatorComponent,
-    data: {title: 'Kalkulator kalorii - Oblicz zapotrzebowanie kalorii'}
-  },
-  {
-    path: 'dieta',
-    component: DietComponent,
-    canActivate: [AuthGuardService],
-    data: {title: 'Dieta - Elektroniczny Przewodnik'}
   },
   {
     path: 'aktualnosci-dodaj',
