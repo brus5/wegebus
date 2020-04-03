@@ -1,0 +1,15 @@
+{
+  "extends": "../tslint.json",
+  "rules": {
+    "directive-selector": [],
+    "component-selector": [],
+    "variable-name": [
+      true,
+      "allow-leading-underscore"
+    ],
+    "curly": [
+      true,
+      "as-needed"
+    ]
+  }
+}

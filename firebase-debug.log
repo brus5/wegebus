@@ -1,0 +1,121 @@
+[debug] [2020-02-12T10:11:21.527Z] ----------------------------------------------------------------------
+[debug] [2020-02-12T10:11:21.531Z] Command:       /usr/local/bin/node /usr/local/bin/firebase serve
+[debug] [2020-02-12T10:11:21.532Z] CLI Version:   7.5.0
+[debug] [2020-02-12T10:11:21.532Z] Platform:      darwin
+[debug] [2020-02-12T10:11:21.532Z] Node Version:  v10.15.1
+[debug] [2020-02-12T10:11:21.534Z] Time:          Wed Feb 12 2020 11:11:21 GMT+0100 (Central European Standard Time)
+[debug] [2020-02-12T10:11:21.534Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2020-02-12T10:11:21.570Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2020-02-12T10:11:21.571Z] > authorizing via signed-in user
+[debug] [2020-02-12T10:11:21.572Z] [iam] checking project fitx-beba9 for permissions ["firebase.projects.get"]
+[debug] [2020-02-12T10:11:21.575Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2020-02-12T10:11:21.576Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2020-02-12T10:11:21.922Z] <<< HTTP RESPONSE 200
+[debug] [2020-02-12T10:11:21.951Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/fitx-beba9:testIamPermissions  
+
+[debug] [2020-02-12T10:11:22.257Z] <<< HTTP RESPONSE 200
+[debug] [2020-02-12T10:11:22.260Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/fitx-beba9  
+ 
+[debug] [2020-02-12T10:11:22.628Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from '/Users/lukaszkrawczak/AngularProjects/FitX-Angular'...
+[info] 
+[debug] [2020-02-12T10:11:22.633Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/fitx-beba9/webApps/-/config  
+ 
+[info] ✔  functions: Using node@10 from host.
+[info] ✔  functions: Emulator started at http://localhost:5001
+[debug] [2020-02-12T10:11:23.416Z] <<< HTTP RESPONSE 200
+[info] i  functions: Watching "/Users/lukaszkrawczak/AngularProjects/FitX-Angular/functions" for Cloud Functions...
+[info] i  hosting: Serving hosting files from: dist/browser
+[info] ✔  hosting: Local server: http://localhost:5000
+[debug] [2020-02-12T10:11:23.950Z] [runtime-status] Functions runtime initialized. {"cwd":"/Users/lukaszkrawczak/AngularProjects/FitX-Angular/functions","node_version":"10.15.1"}
+[debug] [2020-02-12T10:11:23.951Z] [runtime-status] Disabled runtime features: {"functions_config_helper":true,"network_filtering":true,"timeout":true,"memory_limiting":true,"admin_stubs":true} {}
+[debug] [2020-02-12T10:11:23.956Z] [runtime-status] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.6.0","resolution":"/Users/lukaszkrawczak/AngularProjects/FitX-Angular/functions/node_modules/firebase-admin/lib/index.js"}
+[debug] [2020-02-12T10:11:23.959Z] [runtime-status] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.2.0","resolution":"/Users/lukaszkrawczak/AngularProjects/FitX-Angular/functions/node_modules/firebase-functions/lib/index.js"}
+[debug] [2020-02-12T10:11:23.960Z] [runtime-status] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.2.0","resolution":"/Users/lukaszkrawczak/AngularProjects/FitX-Angular/functions/node_modules/firebase-functions/lib/index.js"}
+[warn] ⚠  Error: Cannot find module '/Users/lukaszkrawczak/AngularProjects/FitX-Angular/functions/dist/server'
+    at Function.Module._resolveFilename (internal/modules/cjs/loader.js:581:15)
+    at Function.Module._load (internal/modules/cjs/loader.js:507:25)
+    at Module.require (internal/modules/cjs/loader.js:637:17)
+    at require (internal/modules/cjs/helpers.js:22:18)
+    at Object.<anonymous> (/Users/lukaszkrawczak/AngularProjects/FitX-Angular/functions/lib/index.js:4:19)
+    at Module._compile (internal/modules/cjs/loader.js:689:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:700:10)
+    at Module.load (internal/modules/cjs/loader.js:599:32)
+    at tryModuleLoad (internal/modules/cjs/loader.js:538:12)
+    at Function.Module._load (internal/modules/cjs/loader.js:530:3)
+[warn] ⚠  We were unable to load your functions code. (see above)
+   - It appears your code is written in Typescript, which must be compiled before emulation.
+   - You may be able to run "npm run build" in your functions directory to resolve this.
+[debug] [2020-02-12T10:12:16.840Z] File /Users/lukaszkrawczak/AngularProjects/FitX-Angular/functions/dist/browser/vendor.js.map changed, reloading triggers
+[debug] [2020-02-12T10:12:16.841Z] File /Users/lukaszkrawczak/AngularProjects/FitX-Angular/functions/dist/browser/vendor.js changed, reloading triggers
+[debug] [2020-02-12T10:12:16.841Z] File /Users/lukaszkrawczak/AngularProjects/FitX-Angular/functions/dist/browser/styles.js.map changed, reloading triggers
+[debug] [2020-02-12T10:12:16.841Z] File /Users/lukaszkrawczak/AngularProjects/FitX-Angular/functions/dist/browser/styles.js changed, reloading triggers
+[debug] [2020-02-12T10:12:16.844Z] File /Users/lukaszkrawczak/AngularProjects/FitX-Angular/functions/dist/browser/runtime.js changed, reloading triggers
+[debug] [2020-02-12T10:12:16.845Z] File /Users/lukaszkrawczak/AngularProjects/FitX-Angular/functions/dist/browser/runtime.js.map changed, reloading triggers
+[debug] [2020-02-12T10:12:16.845Z] File /Users/lukaszkrawczak/AngularProjects/FitX-Angular/functions/dist/browser/polyfills.js.map changed, reloading triggers
+[debug] [2020-02-12T10:12:16.938Z] File /Users/lukaszkrawczak/AngularProjects/FitX-Angular/functions/dist/browser/runtime.js.map changed, reloading triggers
+[debug] [2020-02-12T10:12:16.938Z] File /Users/lukaszkrawczak/AngularProjects/FitX-Angular/functions/dist/browser/runtime.js changed, reloading triggers
+[debug] [2020-02-12T10:12:16.938Z] File /Users/lukaszkrawczak/AngularProjects/FitX-Angular/functions/dist/browser/polyfills.js.map changed, reloading triggers
+[debug] [2020-02-12T10:12:19.058Z] [runtime-status] Functions runtime initialized. {"cwd":"/Users/lukaszkrawczak/AngularProjects/FitX-Angular/functions","node_version":"10.15.1"}
+[debug] [2020-02-12T10:12:19.059Z] [runtime-status] Disabled runtime features: {"functions_config_helper":true,"network_filtering":true,"timeout":true,"memory_limiting":true,"admin_stubs":true} {}
+[debug] [2020-02-12T10:12:19.066Z] [runtime-status] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.6.0","resolution":"/Users/lukaszkrawczak/AngularProjects/FitX-Angular/functions/node_modules/firebase-admin/lib/index.js"}
+[debug] [2020-02-12T10:12:19.068Z] [runtime-status] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.2.0","resolution":"/Users/lukaszkrawczak/AngularProjects/FitX-Angular/functions/node_modules/firebase-functions/lib/index.js"}
+[debug] [2020-02-12T10:12:19.070Z] [runtime-status] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.2.0","resolution":"/Users/lukaszkrawczak/AngularProjects/FitX-Angular/functions/node_modules/firebase-functions/lib/index.js"}
+[warn] ⚠  Error: Cannot find module '/Users/lukaszkrawczak/AngularProjects/FitX-Angular/functions/dist/server'
+    at Function.Module._resolveFilename (internal/modules/cjs/loader.js:581:15)
+    at Function.Module._load (internal/modules/cjs/loader.js:507:25)
+    at Module.require (internal/modules/cjs/loader.js:637:17)
+    at require (internal/modules/cjs/helpers.js:22:18)
+    at Object.<anonymous> (/Users/lukaszkrawczak/AngularProjects/FitX-Angular/functions/lib/index.js:4:19)
+    at Module._compile (internal/modules/cjs/loader.js:689:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:700:10)
+    at Module.load (internal/modules/cjs/loader.js:599:32)
+    at tryModuleLoad (internal/modules/cjs/loader.js:538:12)
+    at Function.Module._load (internal/modules/cjs/loader.js:530:3)
+[warn] ⚠  We were unable to load your functions code. (see above)
+   - It appears your code is written in Typescript, which must be compiled before emulation.
+   - You may be able to run "npm run build" in your functions directory to resolve this.
+[debug] [2020-02-12T10:12:25.883Z] File /Users/lukaszkrawczak/AngularProjects/FitX-Angular/functions/lib/index.js.map changed, reloading triggers
+[debug] [2020-02-12T10:12:25.883Z] File /Users/lukaszkrawczak/AngularProjects/FitX-Angular/functions/lib/index.js changed, reloading triggers
+[debug] [2020-02-12T10:12:29.172Z] [runtime-status] Functions runtime initialized. {"cwd":"/Users/lukaszkrawczak/AngularProjects/FitX-Angular/functions","node_version":"10.15.1"}
+[debug] [2020-02-12T10:12:29.173Z] [runtime-status] Disabled runtime features: {"functions_config_helper":true,"network_filtering":true,"timeout":true,"memory_limiting":true,"admin_stubs":true} {}
+[debug] [2020-02-12T10:12:29.179Z] [runtime-status] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.6.0","resolution":"/Users/lukaszkrawczak/AngularProjects/FitX-Angular/functions/node_modules/firebase-admin/lib/index.js"}
+[debug] [2020-02-12T10:12:29.210Z] [runtime-status] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.2.0","resolution":"/Users/lukaszkrawczak/AngularProjects/FitX-Angular/functions/node_modules/firebase-functions/lib/index.js"}
+[debug] [2020-02-12T10:12:29.211Z] [runtime-status] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.2.0","resolution":"/Users/lukaszkrawczak/AngularProjects/FitX-Angular/functions/node_modules/firebase-functions/lib/index.js"}
+[warn] ⚠  Error: Cannot find module '/Users/lukaszkrawczak/AngularProjects/FitX-Angular/functions/dist/server'
+    at Function.Module._resolveFilename (internal/modules/cjs/loader.js:581:15)
+    at Function.Module._load (internal/modules/cjs/loader.js:507:25)
+    at Module.require (internal/modules/cjs/loader.js:637:17)
+    at require (internal/modules/cjs/helpers.js:22:18)
+    at Object.<anonymous> (/Users/lukaszkrawczak/AngularProjects/FitX-Angular/functions/lib/index.js:4:19)
+    at Module._compile (internal/modules/cjs/loader.js:689:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:700:10)
+    at Module.load (internal/modules/cjs/loader.js:599:32)
+    at tryModuleLoad (internal/modules/cjs/loader.js:538:12)
+    at Function.Module._load (internal/modules/cjs/loader.js:530:3)
+[warn] ⚠  We were unable to load your functions code. (see above)
+   - It appears your code is written in Typescript, which must be compiled before emulation.
+   - You may be able to run "npm run build" in your functions directory to resolve this.
+[debug] [2020-02-12T10:15:11.628Z] File /Users/lukaszkrawczak/AngularProjects/FitX-Angular/functions changed, reloading triggers
+[debug] [2020-02-12T10:15:13.578Z] [runtime-status] Functions runtime initialized. {"cwd":"/Users/lukaszkrawczak/AngularProjects/FitX-Angular/functions","node_version":"10.15.1"}
+[debug] [2020-02-12T10:15:13.579Z] [runtime-status] Disabled runtime features: {"functions_config_helper":true,"network_filtering":true,"timeout":true,"memory_limiting":true,"admin_stubs":true} {}
+[debug] [2020-02-12T10:15:13.585Z] [runtime-status] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.6.0","resolution":"/Users/lukaszkrawczak/AngularProjects/FitX-Angular/functions/node_modules/firebase-admin/lib/index.js"}
+[debug] [2020-02-12T10:15:13.587Z] [runtime-status] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.2.0","resolution":"/Users/lukaszkrawczak/AngularProjects/FitX-Angular/functions/node_modules/firebase-functions/lib/index.js"}
+[debug] [2020-02-12T10:15:13.589Z] [runtime-status] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.2.0","resolution":"/Users/lukaszkrawczak/AngularProjects/FitX-Angular/functions/node_modules/firebase-functions/lib/index.js"}
+[warn] ⚠  Error: Cannot find module '/Users/lukaszkrawczak/AngularProjects/FitX-Angular/functions/dist/server'
+    at Function.Module._resolveFilename (internal/modules/cjs/loader.js:581:15)
+    at Function.Module._load (internal/modules/cjs/loader.js:507:25)
+    at Module.require (internal/modules/cjs/loader.js:637:17)
+    at require (internal/modules/cjs/helpers.js:22:18)
+    at Object.<anonymous> (/Users/lukaszkrawczak/AngularProjects/FitX-Angular/functions/lib/index.js:4:19)
+    at Module._compile (internal/modules/cjs/loader.js:689:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:700:10)
+    at Module.load (internal/modules/cjs/loader.js:599:32)
+    at tryModuleLoad (internal/modules/cjs/loader.js:538:12)
+    at Function.Module._load (internal/modules/cjs/loader.js:530:3)
+[warn] ⚠  We were unable to load your functions code. (see above)
+   - It appears your code is written in Typescript, which must be compiled before emulation.
+   - You may be able to run "npm run build" in your functions directory to resolve this.

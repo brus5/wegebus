@@ -1,0 +1,17 @@
+<div class="card">
+  <h4 class="card-title">
+    <i
+      class="material-icons hover md-18 pull-right"
+      *ngIf="isAdmin"
+      [routerLink]="['/aktualnosci/edycja/', news.id]">
+      edit
+    </i>
+  </h4>
+
+  <div
+    class="card-body"
+    [routerLink]="['/aktualnosci/' + cuttedLink + '/', news.id]"
+    [innerHTML]="news.content">
+  </div>
+
+</div>

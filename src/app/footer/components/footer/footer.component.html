@@ -1,0 +1,42 @@
+<div id="footer" [ngClass]="(isHandset$ | async) ? 'mobile-menu': 'desktop-menu'">
+  <responsive-switcher>
+    <footer>
+      <div class="container">
+        <div class="row">
+
+          <div class="col-xs-6">
+            <h3>Nawigacja</h3>
+            <div *ngFor="let link of menuLinks">
+              <a routerLink="{{link.destination}}" style="display: inline">{{link.name}}</a>
+            </div>
+          </div>
+          <div class="col-xs-6">
+            <h3>Inne</h3>
+            <div>
+              <a [routerLink]="'/o-mnie'">O mnie</a>
+            </div>
+            <div>
+              <a [routerLink]="'/pomoc'">Pomoc</a>
+            </div>
+            <div>
+              <a [routerLink]="'/kontakt'">Kontakt</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-12">
+            <hr>
+            <p>
+              Copyright © 2019 eKcal.pl Wszelkie prawa zastrzeżone.
+            </p>
+            <p class="page-version">
+              Wersja strony: {{version}}
+            </p>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </responsive-switcher>
+</div>

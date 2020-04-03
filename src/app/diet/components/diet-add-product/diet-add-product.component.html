@@ -1,0 +1,135 @@
+<div class="row mt-10">
+
+  <table *ngIf="dailyProducts$.length > 0" class="table table-condensed">
+    <thead></thead>
+    <tbody>
+    <tr *ngFor="let product of dailyProducts$; let i = index">
+      <th class="text-left">
+        <a [routerLink]="['/produkt/' + productLink(product) + '/', product.key]"
+           matTooltip="B: {{product.nutrition.proteins | number: '1.0-0'}} |
+                       W: {{product.nutrition.carbs | number: '1.0-0'}} |
+                       T: {{product.nutrition.fats | number: '1.0-0'}}">
+          {{product.name.charAt(0).toUpperCase() + product.name.substring(1)}}
+        </a>
+        <small>{{product.weight}} g</small>
+      </th>
+      <th class="text-right">{{product.nutrition.kcal | number: '1.0-0'}}</th>
+      <th class="text-right"><a id="deleteElement" type="button" (click)="removeMeal(i)">X</a></th>
+    </tr>
+    </tbody>
+    <tfoot>
+    <tr>
+      <th class="text-left">
+        P: {{totalProteins | number: '1.0-0'}}
+        C: {{totalCarbs | number: '1.0-0'}}
+        T: {{totalFats | number: '1.0-0'}}
+      </th>
+      <th class="text-right">{{totalCalories | number:'1.0-0'}} kcal</th>
+      <th></th>
+    </tr>
+    </tfoot>
+
+  </table>
+</div>
+<a
+  type="button" class="btn btn-primary btn-sm"
+  #addProductButtonElement
+  [ngClass]="(addProductButtonElement.hidden) ? 'hidden' : 'visible'"
+  (click)="addProductButtonElement.hidden = true"
+>
+  Dodaj
+</a>
+<div *ngIf="!addProductButtonElement.hidden; else newProduct"></div>
+
+<ng-template #newProduct>
+
+  <form #form="ngForm">
+
+    <div class="row mt-10">
+      <div class="input-group">
+        <input
+            #query="ngModel"
+            placeholder="Wpisz nazwę produktu" autocomplete="off" class="form-control"
+            name="name" id="name" type="text" maxlength="100"
+            (keyup)="filter(query.value)"
+            [(ngModel)]="searchedProduct"
+            [autofocus]="true">
+        <!--(keyup)="keyUp.next(query.value); onInputChanged()" insdead of (keyup) above -->
+        <span class="input-group-btn">
+          <button
+            class="btn btn-danger"
+            *ngIf="addProductButtonElement.hidden"
+            (click)="addProductButtonElement.hidden = false"
+          >
+            X
+          </button>
+        </span>
+      </div>
+    </div>
+
+    <div *ngIf="isSearching; else noProductsOnLinst">
+      <progress-spinner></progress-spinner>
+    </div>
+
+    <div class="searched-products text-normal"
+         *ngFor="let product of filteredProducts$ | filterProduct: query.value; let i = index">
+      <div *ngIf="i < productsLimit">
+        <ul class="row mt-10">
+          <a matTooltip="B: {{product.nutrition.proteins | number: '1.0-0'}} |
+                       W: {{product.nutrition.carbs | number: '1.0-0'}} |
+                       T: {{product.nutrition.fats | number: '1.0-0'}} / 100 g">
+            {{product.name.charAt(0).toUpperCase() + product.name.substring(1)}}
+          </a>
+          <a #addProductWeightButtonElement
+             class="pull-right" id="addProductWeightButtonElement"
+             [ngClass]="(addProductWeightButtonElement.hidden) ? 'hidden' : 'visible'"
+             (click)="addProductWeightButtonElement.hidden = true">
+            Dodaj
+          </a>
+        </ul>
+
+        <div *ngIf="addProductWeightButtonElement.hidden">
+
+          <div class="row">
+            <div class="input-group">
+              <span class="input-group-addon">g</span>
+              <input
+                  #weightInputElement="ngModel" ngModel [(ngModel)]="productWeight"
+                  class="form-control" name="weight" required id="weight" type="number"
+                  autofocus placeholder="Podaj wagę produktu"
+                  minValue="0.1" maxValue="1000" autocomplete="off"
+                  (keyup)="setProductWeight(weightInputElement.value)"
+                  (keypress)="onEnterPressed($event)"
+                  [autofocus]="true">
+              <span class="input-group-btn">
+                <button
+                    #confirmProductElement class="btn btn-success" type="button" id="confirmProductElement"
+                    [disabled]="form.invalid"
+                    (click)="addProductButtonElement.hidden = false;
+                  addProductToList(product, weightInputElement.value);">
+                  OK
+                </button>
+              </span>
+            </div>
+            <div class="alert alert-danger" *ngIf="weightInputElement.touched && weightInputElement.invalid">
+              <div *ngIf="weightInputElement.errors.required">Podaj wagę produktu.</div>
+              <div *ngIf="weightInputElement.errors?.minValue">Waga nie może być mniejsza od 0.1.</div>
+              <div *ngIf="weightInputElement.errors?.maxValue">Waga nie może być większa od 1000.</div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </form>
+
+  <ng-template #noProductsOnLinst>
+    <div class="no-products text-normal" *ngIf="wasSearching && filteredProducts$.length === 0">
+      Brak produktów w bazie danych.
+    </div>
+  </ng-template>
+
+</ng-template>

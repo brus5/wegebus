@@ -1,0 +1,129 @@
+@import url('~bootstrap/dist/css/bootstrap.css');
+@import '~ngx-toastr/toastr';
+@import '~aos/dist/aos.css';
+
+$font-color-accent: #777;
+$color-primary: #555;
+$hover-link-color: #333;
+$h-margin: 16px 6px 6px 6px;
+
+#content { margin-top: 55px }
+.mt-10 { margin-top: 10px }
+.mb-10 { margin-bottom: 10px }
+.alert { margin-bottom: 4px }
+.text-accent { color: $font-color-accent }
+.text-primary { color: $color-primary }
+.material-icons.hover { cursor: pointer }
+.material-icons.md-18 { font-size: 18px }
+span.label { font-weight: normal }
+
+html, body {
+  background: #fafafa;
+  height: 100%;
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  font-size: 14px;
+}
+
+label {
+  margin: 10px 15px 0 5px;
+  display: block;
+  font-weight: 500;
+}
+
+.card {
+  border: 1px solid #dfdfdf;
+  border-radius: 5px;
+  margin-top: 20px;
+  background-color: #ffffff
+}
+
+.card-title {
+  margin: 6px auto auto 6px;
+  font-weight: bolder;
+}
+
+.card-body > p {
+  margin: 6px 6px auto 6px;
+  &:last-child {
+    margin: 6px auto 18px 6px;
+  }
+}
+
+.card-body > h4 {
+  margin: $h-margin;
+  font-size: large;
+}
+
+.card-body > h5 {
+  margin: $h-margin;
+  font-size: larger;
+}
+
+.card-detials {
+  color: $font-color-accent;
+  p {
+    margin: 12px;
+    &:last-child {
+      margin: 12px 12px 18px 12px;
+    }
+  }
+  sup { margin-right: 6px }
+}
+
+a {
+  color: #999;
+  cursor: pointer;
+  &:hover {
+    color: $hover-link-color;
+    text-decoration: none
+  }
+}
+
+.mat-checkbox-checked .mat-checkbox-background, .mat-checkbox-indeterminate .mat-checkbox-background {
+  background-color: $font-color-accent !important; /* overwrite the checkbox background */
+}
+
+.mat-checkbox:not(.mat-checkbox-disabled) .mat-checkbox-ripple .mat-ripple-element {
+  background-color: black !important; /* overwrite the ripple overlay on hover and click */
+}
+
+.mat-radio-button.mat-accent .mat-radio-inner-circle {
+  background-color: $font-color-accent !important;   /* inner circle color change */
+}
+
+.mat-radio-button.mat-accent.mat-radio-checked .mat-radio-outer-circle {
+  border-color: $font-color-accent !important; /* outer ring color change */
+}
+
+.mat-progress-spinner circle, .mat-spinner circle {
+  stroke: $font-color-accent !important;
+}
+
+.card:hover { /* news-tiles hover effect */
+  a:hover { color: $hover-link-color !important; }
+  h5 a:hover { color: $hover-link-color !important; }
+}
+
+progress-spinner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+mat-select {
+  border: #cccccc 1px solid;
+  border-radius: 5px;
+  padding: 6px;
+  width: 100%;
+}
+
+.mat-select-value > span {
+  color: $color-primary !important;
+  margin-left: 5px !important;
+}
+
+
+//input[type="file"] {
+//  display: none;
+//}

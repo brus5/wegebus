@@ -1,0 +1,42 @@
+<responsive-switcher>
+  <component-title [title]="dietTitle"></component-title>
+  <div id="content" [ngClass]="(isHandset$ | async) ? 'mobile-content' : 'desktop-content'">
+
+    <calendar (date)="onSelectedDate($event)"></calendar>
+    <div *ngIf="!isLoading; else loadingProducts">
+      <table
+        *ngFor="let meal of mealsTime; let i = index"
+        class="table table-striped"
+      >
+
+        <thead>
+        <tr>
+          <th class="text-left">{{meal.time}} - {{meal.name}}</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <th>
+            <diet-add-product [date]="selectedDate" [time]="meal.time"></diet-add-product>
+          </th>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+    <ng-template #loadingProducts>
+      <progress-spinner></progress-spinner>
+    </ng-template>
+    <diet-custom-hours
+      *ngIf="!isLoading"
+      [date]="selectedDate"></diet-custom-hours>
+
+  </div>
+  <component-description [description]="description"></component-description>
+
+  <adsense-bottom></adsense-bottom>
+
+  <div style="margin-top: 90px"></div>
+
+  <diet-menu [date]="selectedDate"></diet-menu>
+
+</responsive-switcher>

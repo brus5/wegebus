@@ -1,0 +1,19 @@
+<div *ngIf="isHandset$ | async">
+<!-- mobile slider -->
+</div>
+
+<div
+  id="desktop"
+  data-aos="fade-in"
+  *ngIf="!(isHandset$ | async)">
+  <slideshow [height]="'200px'"
+             [minHeight]="'200px'"
+             [autoPlay]="true"
+             [showArrows]="false"
+             [imageUrls]="imageSources"
+             [lazyLoad]="imageSources?.length > 1"
+             [autoPlayWaitForLazyLoad]="false"
+             [autoPlayInterval]="10000"
+             [showDots]="true">
+  </slideshow>
+</div>

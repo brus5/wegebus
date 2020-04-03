@@ -1,0 +1,81 @@
+$content-margin-desktop: -15%;
+$content-margin-mobile: -3%;
+
+$menu-background-color: #313131;
+
+mat-toolbar {
+  bottom: 0;
+  position: fixed;
+  display: inline-block;
+  z-index: 100 !important;
+}
+
+.desktop-menu {
+  margin-left: $content-margin-desktop;
+  background: #282828;
+}
+
+.mobile-menu {
+  margin-left: $content-margin-mobile;
+  background: #282828;
+}
+
+#content {
+  color: #282828;
+  vertical-align: middle;
+}
+
+#content, span {
+  text-align: center;
+  position: center;
+}
+
+.title {
+  font-size: 14px;
+  margin: -6px auto 0 auto;
+}
+
+.number {
+  font-weight: lighter;
+  font-size: 14px;
+  margin: -4px auto -8px auto;
+}
+
+.proteins {
+  color: #b3ecff;
+}
+
+.carbs {
+  color: #ffb3b3;
+}
+
+.fats {
+  color: #ffe3b3;
+}
+
+.calories {
+  text-align: center;
+  margin: -8px auto -8px auto;
+  color: #b3ffb3;
+}
+
+.mat-toolbar-row, .mat-toolbar-single-row {
+  white-space: normal;
+}
+
+::ng-deep .mat-progress-bar-fill::after {
+  background-color: #327ab7;
+}
+
+::ng-deep .mat-progress-bar-buffer {
+  background: #E4E8EB;
+}
+
+::ng-deep .mat-progress-bar {
+  border-radius: 2px;
+}
+
+.test {
+  display: inline-block;
+  background: red;
+}

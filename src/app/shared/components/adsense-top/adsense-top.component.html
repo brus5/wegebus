@@ -1,0 +1,16 @@
+<responsive-switcher>
+
+  <div [ngClass]="(isHandset$ | async) ? 'mobile-ad' : 'desktop-ad'">
+
+    <div *ngIf="isHandset$ | async">
+
+    </div>
+    <div *ngIf="!(isHandset$ | async)">
+
+      <div class="text-center" >
+      </div>
+    </div>
+
+  </div>
+
+</responsive-switcher>
