@@ -4,7 +4,7 @@ $text-color: white;
 $text-color-menu: #313131;
 $font-family: 'Poppins', sans-serif;
 $background-color: #FFF;
-$menu-background-color: #b5de1e;
+$menu-background-color: #92b418;
 
 /* Provides styles for components in application */
 :host ::ng-deep .desktop-content {
@@ -79,8 +79,8 @@ mat-toolbar div, a {
   cursor: pointer;
 }
 
-.desktop-nav > .app-title {
-  margin-left: -35%;
+.app-title-desktop {
+  margin-left: $content-margin-desktop;
 }
 
 .mobile-nav {
@@ -103,8 +103,12 @@ mat-toolbar div, a {
   background-color: inherit;
 }
 
-.mobile-nav > .app-title {
-  margin-left: 20%;
+//.mobile-nav .app-title {
+//  display: none;
+//}
+
+title {
+  display: none;
 }
 
 .mobile-menu {

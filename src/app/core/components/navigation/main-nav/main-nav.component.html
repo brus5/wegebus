@@ -8,7 +8,7 @@
   >
     <mat-toolbar>
       <div [ngClass]="(isHandset$ | async) ? 'mobile-nav': 'desktop-nav'">
-        <span class="app-title">{{appTitle}}</span>
+        <span class="app-title">Menu</span>
       </div>
     </mat-toolbar>
 
@@ -25,7 +25,8 @@
     <!--suppress AngularUndefinedBinding -->
     <div (swiperight)="swipe($event)">
 
-      <mat-toolbar color="primary" [ngClass]="(isHandset$ | async) ? 'mobile-menu' : 'mat-toolbar'" class="position-fixed">
+      <mat-toolbar color="primary" [ngClass]="(isHandset$ | async) ? 'mobile-menu' : 'mat-toolbar'"
+                   class="position-fixed">
         <button
           style="color: white"
           type="button"
@@ -39,7 +40,7 @@
 
         </button>
 
-        <span class="app-title">{{appTitle}}</span>
+        <span [ngClass]="(isHandset$ | async) ? 'app-title-mobile app-title': 'app-title-desktop app-title'">{{appTitle}}</span>
 
         <span class="spacer"></span>
 
@@ -52,8 +53,6 @@
       </mat-toolbar>
 
     </div>
-
-    <!--      AD IN FUTURE <ng-adsense></ng-adsense>      -->
 
     <ng-content></ng-content>
 

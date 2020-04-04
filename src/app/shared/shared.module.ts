@@ -10,8 +10,6 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {AdsenseModule} from 'ng2-adsense';
 import {RouterModule} from '@angular/router';
 
-import {AdsenseTopComponent} from './components/adsense-top/adsense-top.component';
-import {AdsenseBottomComponent} from './components/adsense-bottom/adsense-bottom.component';
 import {ResponsiveComponent} from './components/responsive/responsive.component';
 import {DropdownListComponent} from './components/dropdown-list/dropdown-list.component';
 import {CalendarComponent} from './components/calendar/calendar.component';
@@ -31,8 +29,6 @@ import {LinkService} from './services/link.service';
 
 @NgModule({
   declarations: [
-    AdsenseTopComponent,
-    AdsenseBottomComponent,
     ResponsiveComponent,
     DropdownListComponent,
     CalendarComponent,
@@ -58,8 +54,6 @@ import {LinkService} from './services/link.service';
     AdsenseModule.forRoot({adClient: 'ca-pub-2226661081282412'}),
   ],
   exports: [
-    AdsenseTopComponent,
-    AdsenseBottomComponent,
     ResponsiveComponent,
     DropdownListComponent,
     CalendarComponent,

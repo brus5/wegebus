@@ -1,7 +1,7 @@
 $link-color: #fff;
 $menu-background-color: #313131;
 $hover-text: #313131;
-$hover-background-desktop: #b5de1e;
+$hover-background-desktop: #87ad12;
 $mobile-menu-background-color: #fff;
 
 a {
@@ -24,7 +24,7 @@ a:hover {
 }
 
 .login-btn:hover {
-  background-color: #b1db1c;
+  background-color: $hover-background-desktop;
 }
 
 .login-btn:hover .profile-buttons {
@@ -60,7 +60,7 @@ a:hover {
 .desktop-nav .profile-buttons {
   position: fixed;
   padding: 0;
-  margin-left: -2px;
+  margin-left: -10px;
   margin-top: 5px;
   width: 80px;
   list-style-type: none;
@@ -71,13 +71,17 @@ a:hover {
   float: inherit;
   width: 250%;
   height: 40px;
-  background-color: #b1db1c;
+  background-color: $hover-background-desktop;
   position: relative;
   z-index: 100;
   border-top: 1px dotted #9dc915;
   outline: none;
   padding-left: 10px;
-  padding-top: 0;
+  padding-top: 2px;
+}
+
+.desktop-nav .profile-buttons > ul > li:first-child {
+  border-top-right-radius: 5px;
 }
 
 .desktop-nav .profile-buttons > ul > li:last-child, .admin-buttons > li:last-child {
