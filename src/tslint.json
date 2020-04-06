@@ -4,7 +4,7 @@
     "directive-selector": [],
     "component-selector": [],
     "variable-name": [
-      true,
+      false,
       "allow-leading-underscore"
     ],
     "curly": [

@@ -1,1 +1,52 @@
-.mobile-content, #content{ margin-top: 42px }
+//.mobile-content, #content{ margin-top: 42px }
+.content {
+  height: 100vh;
+
+  .background {
+    background:
+      linear-gradient(
+          rgba(0, 0, 0, 0.5),
+          rgba(0, 0, 0, 0.5)
+      ), url("src/assets/fruits-vegetables.jpg");
+
+    /* Full height */
+    height: 100vh;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  .main-text {
+    filter: brightness(100%);
+    font-size: xx-large;
+    padding-top: 48px;
+    text-align: center;
+    color: white;
+  }
+}
+
+
+
+.title {
+  margin: 96px auto 40px auto;
+  font-size: xx-large;
+  text-align: center;
+  font-family: 'Indie Flower', cursive;
+
+  .wegebus {
+    background: linear-gradient(-60deg, #904e95, #e73c7e, #ee7752);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .title-second {
+    font-size: x-large;
+    font-family: 'Poppins', cursive;
+    font-weight: 100;
+
+    .bold {
+      font-weight: 300
+    }
+  }
+
+}

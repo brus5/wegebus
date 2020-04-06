@@ -67,7 +67,7 @@ mat-toolbar div, a {
   font-size: medium;
   color: $text-color;
   font-family: $font-family;
-  font-weight: lighter;
+  font-weight: 300;
   display: inline-block;
   padding: 5px 15px 5px 15px;
   border-right: 1px dotted #9dc915;
@@ -91,6 +91,7 @@ mat-toolbar div, a {
 .mobile-nav a {
   color: $text-color-menu;
   font-family: $font-family;
+  font-weight: 300;
   display: inline-block;
   padding: 15px 0 16px 15px;
   border-bottom: 1px solid #e6e6e6;

@@ -7,7 +7,6 @@ import {AuthService} from '../../../shared/services/auth.service';
 import {DataTableResource} from 'angular5-data-table';
 import {User} from '../../../shared/models/user';
 import {AppUser} from '../../../shared/models/app-user';
-import {SeoService} from '../../../shared/services/seo-service';
 import {LinkService} from '../../../shared/services/link.service';
 
 @Component({
@@ -36,7 +35,6 @@ export class ProductsComponent implements OnInit, OnDestroy {
   constructor(private _navService: NavService,
               private _productService: ProductService,
               private _auth: AuthService,
-              private _seo: SeoService,
               private _linkService: LinkService) {}
 
   async ngOnInit() {
@@ -50,12 +48,10 @@ export class ProductsComponent implements OnInit, OnDestroy {
     this.userAuthSubscription = this._auth.appUser$$
       .subscribe(appUser => this.appUser$ = appUser);
 
-    this._seo.init('products.component');
   }
 
   ngOnDestroy() {
     this.productsSubscription.unsubscribe();
-    this._seo.disconnect();
     this._productService.loading = true;
   }
 
@@ -136,7 +132,7 @@ export class ProductsComponent implements OnInit, OnDestroy {
 
     setTimeout(_ => {
       this._productService.loading = false;
-    },1000);
+    }, 1000);
   }
 
 
