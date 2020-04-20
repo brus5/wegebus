@@ -19,7 +19,7 @@ export class UserService {
       if (value) {
         this.login(user);
       } else {
-        this.mockUser(user);
+        this.newUser(user);
       }
     });
   }
@@ -47,8 +47,12 @@ export class UserService {
     });
   }
 
-  private mockUser(user: firebase.User) {
-    let newUser = new User(user.email, user.displayName, user.uid);
-    this.db.object('/users/' + user.uid).set(newUser.mockStats());
+  private newUser(user: firebase.User) {
+    this.db.object('/users/' + user.uid).set({
+      uid: user.uid,
+      name: user.displayName,
+      email: user.email,
+      isAdmin: false
+    });
   }
 }

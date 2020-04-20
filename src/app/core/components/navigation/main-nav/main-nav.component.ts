@@ -8,6 +8,7 @@ import {AppUser} from '../../../../shared/models/app-user';
 import {NAV_LINKS, TITLE} from '../menu';
 import {NavService} from '../../services/nav.service';
 import {DOCUMENT} from '@angular/common';
+import {ShoppingCartService} from '../../../../product/services/shopping-cart.service';
 
 @Component({
   selector: 'main-nav',
@@ -17,6 +18,8 @@ import {DOCUMENT} from '@angular/common';
 export class MainNavComponent implements OnInit {
 
   public isHandset$: Observable<boolean>;
+  shoppingCartItemCount: number;
+  cart$;
 
   @ViewChild(MatSidenav, {static: true}) sidenav: MatSidenav;
 
@@ -25,21 +28,20 @@ export class MainNavComponent implements OnInit {
   constructor(@Inject(DOCUMENT) private document: Document,
               private _auth: AuthService,
               private _breakpointObserver: BreakpointObserver,
-              private _navService: NavService) {
+              private _navService: NavService,
+              private _shoppingCartService: ShoppingCartService) {
   }
 
-  ngOnInit() {
-    let breakpoints = [
-      Breakpoints.Handset,
-/*      Breakpoints.Tablet,
-      Breakpoints.TabletLandscape,
-      Breakpoints.TabletPortrait*/];
+  async ngOnInit() {
+    let breakpoints = [Breakpoints.Handset];
 
     this.isHandset$ = this._breakpointObserver
       .observe(breakpoints)
       .pipe(map(result => result.matches));
     this._auth.appUser$$.subscribe(appUser => this.appUser$ = appUser);
     this._navService.isHandset$ = this.isHandset$;
+
+    this.cart$ = (await this._shoppingCartService.getCart());
   }
 
   swipe($event: HammerInput) {

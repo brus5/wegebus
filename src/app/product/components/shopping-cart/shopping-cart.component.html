@@ -1,0 +1,37 @@
+<responsive-switcher>
+  <h1>Koszyk</h1>
+  <ng-container *ngIf="cart$ | async as cart">
+    <p>
+      Masz {{ cart.totalItemsCount }} produktów w koszyku.
+    </p>
+    <table class="table">
+      <thead>
+      <tr>
+        <th>Produkt</th>
+        <th>Ilość</th>
+        <th>Cena</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let productId of cart.productIds">
+        <td>
+          {{cart.items[productId].product.name}}
+        </td>
+        <td>
+          {{cart.items[productId].quantity}}
+        </td>
+        <td>
+          {{(cart.items[productId].product.price * cart.items[productId].quantity) | currency: 'PLN'}}
+        </td>
+      </tr>
+      </tbody>
+      <tfoot>
+      <tr>
+        <td></td>
+        <td></td>
+        <td>{{cart.totalPrice}}</td>
+      </tr>
+      </tfoot>
+    </table>
+  </ng-container>
+</responsive-switcher>

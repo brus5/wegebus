@@ -9,8 +9,6 @@
                  required placeholder="Nazwa produktu" maxlength="100">
           <div class="alert alert-danger" *ngIf="name.touched && name.invalid">
             <div *ngIf="name.errors.required">Wpisz nazwę produktu.</div>
-            <div *ngIf="carbs.errors?.minValue">Ilość nie może być mniejsza od 0.1.</div>
-            <div *ngIf="carbs.errors?.maxValue">Ilość nie może być większa od 1000.</div>
           </div>
         </div>
 
@@ -28,72 +26,49 @@
           <div class="alert alert-danger"
                *ngIf="categoryControl.hasError('required') &&
                categoryControl.value == null && categoryControl.dirty">
-            <div>Wybierz produkt</div>
+            <div>Wybierz kategorię</div>
           </div>
         </div>
 
         <div class="row">
-          <label for="proteins">Białko</label>
+          <label for="price">Cena produktu</label>
           <div class="input-group">
-            <span class="input-group-addon">g</span>
-            <input #proteins="ngModel" [(ngModel)]="product.nutrition.proteins"
+            <input #price="ngModel" [(ngModel)]="product.price"
                    class="form-control"
                    min="0" minValue="0" maxValue="1000"
-                   name="proteins" id="proteins"
-                   type="number" required placeholder="Proteiny" minlength="0">
-            <span class="input-group-addon">.00</span>
+                   name="price" id="price"
+                   type="number" required placeholder="Cena" minlength="0">
+            <span class="input-group-addon">zł</span>
           </div>
-          <div class="alert alert-danger" *ngIf="proteins.touched && proteins.invalid">
-            <div *ngIf="proteins.errors.required">Podaj ilość białka.</div>
-            <div *ngIf="proteins.errors?.minValue">Ilość nie może być mniejsza od 0.</div>
-            <div *ngIf="proteins.errors?.maxValue">Ilość nie może być większa od 1000.</div>
-          </div>
-        </div>
-
-        <div class="row">
-          <label for="carbs">Węglowodany</label>
-          <div class="input-group">
-            <span class="input-group-addon">g</span>
-            <input #carbs="ngModel" [(ngModel)]="product.nutrition.carbs" class="form-control"
-                   min="0" minValue="0" maxValue="1000"
-                   name="carbs" id="carbs"
-                   type="number" required placeholder="Węglowodany" minlength="0">
-            <span class="input-group-addon">.00</span>
-          </div>
-          <div class="alert alert-danger" *ngIf="carbs.touched && carbs.invalid">
-            <div *ngIf="carbs.errors.required">Podaj ilość węglowodanów.</div>
-            <div *ngIf="carbs.errors?.minValue">Ilość nie może być mniejsza od 0.</div>
-            <div *ngIf="carbs.errors?.maxValue">Ilość nie może być większa od 1000.</div>
+          <div class="alert alert-danger" *ngIf="price.touched && price.invalid">
+            <div *ngIf="price.errors.required">Podaj cenę.</div>
+            <div *ngIf="price.errors?.minValue">Cena nie może być mniejsza od 0.</div>
+            <div *ngIf="price.errors?.maxValue">Cena nie może być większa od 1000.</div>
           </div>
         </div>
 
         <div class="row">
-          <label for="fats">Tłuszcze</label>
-          <div class="input-group">
-            <span class="input-group-addon">g</span>
-            <input #fats="ngModel" [(ngModel)]="product.nutrition.fats" class="form-control"
-                   min="0" minValue="0" maxValue="1000"
-                   name="fats" id="fats"
-                   type="number" required placeholder="Tłuszcze" minlength="0">
-            <span class="input-group-addon">.00</span>
-          </div>
-          <div class="alert alert-danger" *ngIf="fats.touched && fats.invalid">
-            <div *ngIf="fats.errors.required">Podaj ilość tłuszczy.</div>
-            <div *ngIf="fats.errors?.minValue">Ilość nie może być mniejsza od 0.</div>
-            <div *ngIf="fats.errors?.maxValue">Ilość nie może być większa od 1000.</div>
+          <label for="imageUrl">Zdjęcie</label>
+          <input #imageUrl="ngModel" [(ngModel)]="product.imageUrl"
+                 class="form-control"
+                 name="imageUrl" id="imageUrl"
+                 type="url" required placeholder="Link do zdjęcia - najlepiej *.JPG" minlength="0">
+          <div class="alert alert-danger" *ngIf="imageUrl.touched && imageUrl.invalid">
+            <div *ngIf="imageUrl.errors.required">Dodaj link zdjęcia.</div>
           </div>
         </div>
 
         <div class="row">
-          <label for="photo">Zdjęcie*</label>
-          <input
-              #inputElement
-              (change)="selectFileAndUpload($event)"
-              id="photo" type="file" required
-              accept="image/x-png,image/gif,image/jpeg,image/jpg">
-        </div>
-        <div class="alert alert-danger" *ngIf="inputElement.oninvalid">
-          <div>Wprowadź zdjęcie produktu.</div>
+          <label for="description">Opis <span style="font-size: xx-small">nieobowiązkowe</span></label>
+          <textarea
+            id="description"
+            class="form-control"
+            name="newsContent" type="text"
+            placeholder="Opis"
+            required
+            rows="10"
+            [(ngModel)]="product.description">
+        </textarea>
         </div>
 
         <div class="row mt-10">
@@ -117,24 +92,12 @@
       </div>
 
       <div class="col-md-6">
-        <div *ngIf="product.name" class="card">
-          <img *ngIf="tempImageUrl$" [src]="tempImageUrl$" class="rounded-top" style="width: 100%;"
-               alt="{{product.name}}">
-          <mat-progress-bar
-            [hidden]="photoUploaded"
-            value="{{uploadProgress$}}"
-            mode="determinate">
-          </mat-progress-bar>
-          <h4 class="card-title">{{product.name.charAt(0).toUpperCase() + product.name.substring(1)}}</h4>
-          <div class="card-body">
-            <p class="card-text">{{countCalories()}} kcal</p>
-          </div>
-        </div>
+        <product-card [product]="product" [show-actions]="false"></product-card>
       </div>
     </div>
   </form>
 
-  <component-description [description]="description" ></component-description>
+  <component-description [description]="description"></component-description>
 
   <ng-template #noProduct>
     <div class="row mt-10">

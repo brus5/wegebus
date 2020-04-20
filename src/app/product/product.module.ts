@@ -5,6 +5,11 @@ import {ProductFormComponent} from './components/product-form/product-form.compo
 import {ProductComponent} from './components/product/product.component';
 import {ProductNutritionComponent} from './components/product-nutrition/product-nutrition.component';
 import {ProductDetailsComponent} from './components/product-details/product-details.component';
+import {ProductsCatalogComponent} from './components/products-catalog/products-catalog.component';
+import {ProductFilterComponent} from './components/product-filter/product-filter.component';
+import {ProductCardComponent} from './components/product-card/product-card.component';
+import {ShoppingCartService} from './services/shopping-cart.service';
+import {ShoppingCartComponent} from './components/shopping-cart/shopping-cart.component';
 
 import {SharedModule} from '../shared/shared.module';
 import {RouterModule} from '@angular/router';
@@ -21,7 +26,11 @@ import {AuthGuardService} from '../shared/services/auth-guard.service';
     ProductFormComponent,
     ProductComponent,
     ProductNutritionComponent,
-    ProductDetailsComponent
+    ProductDetailsComponent,
+    ProductsCatalogComponent,
+    ProductFilterComponent,
+    ProductCardComponent,
+    ShoppingCartComponent
   ],
   imports: [
     SharedModule,
@@ -49,7 +58,8 @@ import {AuthGuardService} from '../shared/services/auth-guard.service';
   ],
   exports: [],
   providers: [
-    ProductService
+    ProductService,
+    ShoppingCartService
   ]
 })
 

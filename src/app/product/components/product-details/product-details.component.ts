@@ -18,10 +18,7 @@ export class ProductDetailsComponent implements OnInit, OnDestroy {
 
   @Input() productId: string;
 
-  product = {
-    name: '',
-    nutrition: {}
-  } as Product;
+  product = { name: '' } as Product;
 
   private productSubscription: Subscription = new Subscription();
   private initProductSubscription: Subscription = new Subscription();
@@ -70,9 +67,7 @@ export class ProductDetailsComponent implements OnInit, OnDestroy {
       title: this.product.name.charAt(0).toUpperCase() + this.product.name.substring(1),
       url: site,
       image: this.product.imageUrl,
-      description: 'Bi: ' + this.product.nutrition.proteins + 'g ' +
-                    'Ww: ' + this.product.nutrition.carbs + 'g ' +
-                    'Tł: ' + this.product.nutrition.fats + 'g ',
+      description: this.product.name,
 
       facebook: {
         app_id: this._seo.Facebook.APP_ID,

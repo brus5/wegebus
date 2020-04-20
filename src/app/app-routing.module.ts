@@ -14,6 +14,8 @@ import {ContactComponent} from './contact/components/contact/contact.component';
 import {HelpComponent} from './help/components/help/help.component';
 import {ErrorComponent} from './error/components/error/error.component';
 import {RegisterEmailComponent} from './core/components/register-email/register-email.component';
+import {ProductsCatalogComponent} from './product/components/products-catalog/products-catalog.component';
+import {ShoppingCartComponent} from './product/components/shopping-cart/shopping-cart.component';
 
 const routes: Routes = [
   {
@@ -28,8 +30,8 @@ const routes: Routes = [
   },
   {
     path: 'produkty',
-    component: ProductsComponent,
-    data: {title: 'Produkty żywnościowe'}
+    component: ProductsCatalogComponent,
+    data: {title: 'Oferta warzyw'}
   },
   {
     path: 'logoff',
@@ -66,6 +68,11 @@ const routes: Routes = [
     path: 'rejestracja',
     component: RegisterEmailComponent,
     data: {title: 'Rejestracja'}
+  },
+  {
+    path: 'koszyk',
+    component: ShoppingCartComponent,
+    data: {title: 'Koszyk'}
   },
   {
     path: '404',

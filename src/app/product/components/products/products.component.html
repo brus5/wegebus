@@ -20,7 +20,7 @@
       <tr>
         <th></th>
         <th class="text-left">Nazwa produktu</th>
-        <th class="text-center" style="width: 200px">Kalorie/100 g</th>
+        <th class="text-center" style="width: 200px">Cena</th>
         <th class="text-right"></th>
       </tr>
       </thead>
@@ -37,11 +37,11 @@
           </a>
           <br/>
           <product-nutrition
-            [nutrition]="product.nutrition"
+            [nutrition]="product.name"
             [isHandset]="isHandset$">
           </product-nutrition>
         </th>
-        <th class="text-center">{{product.nutrition.kcal}}</th>
+        <th class="text-center">{{product.price}} zł</th>
         <th *ngIf="appUser$" class="text-right">
           <button
             type="button" class="btn btn-default btn-sm"
@@ -58,7 +58,9 @@
         <pagination
           [itemsPerPage]="config.itemsPerPage"
           [totalItems]="fileredProductsCount"
-          (pageChanged)="pageChanged($event)">
+          (pageChanged)="pageChanged($event)"
+          [nextText]="'Następne'"
+          [previousText]="'Poprzednie'">
         </pagination>
       </div>
     </div>

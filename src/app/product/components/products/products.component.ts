@@ -47,7 +47,6 @@ export class ProductsComponent implements OnInit, OnDestroy {
 
     this.userAuthSubscription = this._auth.appUser$$
       .subscribe(appUser => this.appUser$ = appUser);
-
   }
 
   ngOnDestroy() {
@@ -89,30 +88,8 @@ export class ProductsComponent implements OnInit, OnDestroy {
   }
 
   get description() {
-    return '<p>Produkty są małymi cegiełkami naszego zdrowego organizmu. Dzięki świadomemu odżywianiu jesteśmy w stanie ' +
-      'odróżnić produkt zdrowy i naturalny od niezdrowego i przetworzonego. Trzymając się kilku zasad jesteśmy w stanie ' +
-      'polepszyć nasze zdrowe odżywianie:</p>\n' +
-      '<ol> \n' +
-      '<li>Jedz jak najmniej cukrów.</li>\n' +
-      '<li>Jedz produkty mało przetworzone albo naturalne.</li>\n' +
-      '<li>Nawadniaj organizm pijąc odpowiednią ilość wody.</li>\n' +
-      '<li>Jedz w regularnych odstępach czasu.</li>\n' +
-      '<li>Nie objadaj się</li>\n' +
-      '</ol>\n' +
-      '\n' +
-      '<p>Produkty dzielimy na:</p>\n' +
-      '<p><b>Białkowe</b>, które mają kluczowe znaczenie dla prawidłowego funkcjonowania. Jest to jedyny budulec mięśni ' +
-      'oraz wszelkich tkanek w naszym organizmie. Nie wszystkie produkty białkowe są pełnowartościowe, ale na pewno nimi ' +
-      'są wszelkie mięsa i ryby.</p>\n' +
-      '\n' +
-      '<p><b>Węglowodany</b>, które są wykorzystywane przez nasz organizm do syntezy glukozy. Glukoza jest paliwem dla ' +
-      'naszego całego ciała i mózgu. Występują w różnych formach: cukrach prostych oraz bardziej złożonych np. skrobi lub ' +
-      'błonnika. Najbardziej wartościowymi są warzywa, owoce, rośliny strączkowe oraz pełne ziarna zbóż. Dodatkowo bardzo ' +
-      'dobrym źródłem węglowodanów są różnego rodzaju ryże lub kasze.</p>\n' +
-      '\n' +
-      '<p><b>Tłuszcze</b>, jest sumą wszystkich spożywanych tłuszczy: nasyconych, jednonienasyconych, wielonasyconych i ' +
-      'tłuszczów trans. Są jednym z trzech źródeł energii dla organizmu (tuż obok białek i węglowodanów). Jeden gram tłuszczu ' +
-      'zawiera aż 9 kilokalorii w przeciwieństwie do białek i węglowodanów gdzie jeden gram ma 4 kilokalorie.</p>';
+    return '<p><b>Pyry</b>, trzeba jeść pyry, pyrki i ziemniaki żeby ' +
+      'być dużym i silnym polakiem! Wspierajmy Polskę jedząc pyry!.</p>';
   }
 
   productLink(product: Product): string {

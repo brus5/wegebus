@@ -3,11 +3,10 @@
   height: 100vh;
 
   .background {
-    background:
-      linear-gradient(
-          rgba(0, 0, 0, 0.5),
-          rgba(0, 0, 0, 0.5)
-      ), url("src/assets/fruits-vegetables.jpg");
+    background: linear-gradient(
+        rgba(0, 0, 0, 0.01),
+        rgba(0, 0, 0, 0.01)
+    ), url("src/assets/main-wallpaper.jpg");
 
     /* Full height */
     height: 100vh;
@@ -17,14 +16,23 @@
   }
 
   .main-text {
+    font-weight: 200;
     filter: brightness(100%);
-    font-size: xx-large;
+    font-size: 4vh;
     padding-top: 48px;
     text-align: center;
-    color: white;
+
+    .polish {
+      font-family: 'Indie Flower', cursive;
+      font-size: 6vh;
+      background: linear-gradient(-60deg, #904e95, #e73c7e, #ee7752);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+
   }
 }
-
 
 
 .title {
@@ -48,5 +56,27 @@
       font-weight: 300
     }
   }
+}
 
+.check-offer {
+  padding-top: 200px;
+  .btn {
+    background: linear-gradient(-60deg, #904e95, #e73c7e, #ee7752);
+    border-color: transparent;
+  }
+}
+
+.secondary-text {
+  font-weight: 300;
+  filter: brightness(100%);
+  font-size: 4vh;
+  padding-top: 200px;
+  text-align: center;
+  color: whitesmoke;
+  .text {
+    background: linear-gradient(
+        rgba(0, 0, 0, 0.5),
+        rgba(0, 0, 0, 0.5)
+    )
+  }
 }

@@ -2,7 +2,7 @@ import {Component, ElementRef, Input, OnDestroy, OnInit, ViewChild} from '@angul
 import {ProductService} from '../../services/product.service';
 import {Product} from '../../../shared/models/product';
 import {CategoryService} from '../../../shared/services/category.service';
-import {Observable, Subscription} from 'rxjs';
+import {Subscription} from 'rxjs';
 import {ImageUploadService} from '../../../shared/services/image-upload.service';
 import {HttpEventType} from '@angular/common/http';
 import {FormControl, NgForm, Validators} from '@angular/forms';
@@ -27,7 +27,7 @@ export class ProductFormComponent implements OnInit, OnDestroy {
   @Input() productId: string;
 
   appUser$ = {} as AppUser;
-  product = { nutrition:{} } as Product;
+  product = {} as Product;
   categories: Array<string> = [];
   categories$;
 
@@ -78,7 +78,6 @@ export class ProductFormComponent implements OnInit, OnDestroy {
 
   public resetForm() {
     this.formElement.reset();
-    this.inputElement.nativeElement.value = '';
     this.tempImageUrl$ = '';
     this.product.category = '';
   }
@@ -96,13 +95,6 @@ export class ProductFormComponent implements OnInit, OnDestroy {
     this.onUpload();
   }
 
-  countCalories(): number {
-    return this.product.nutrition.kcal =
-        ((this.product.nutrition.proteins * 4) | 0)
-      + ((this.product.nutrition.fats * 9) | 0)
-      + ((this.product.nutrition.carbs * 4) | 0);
-  }
-
   deleteProduct() {
     if (!confirm('Chcesz usunąć produkt?')) return;
     this._productService.remove(this.productId)
@@ -110,7 +102,7 @@ export class ProductFormComponent implements OnInit, OnDestroy {
   }
 
   get description() {
-    return 'Nowy produkt musi poczekać na weryfikację administratora. Zwykle to długo nie trwa, dołóż swoją cegiełke dietetycznej społeczności ;)';
+    return 'W każdej chwili można edytować produkt lub usuwać.';
   }
 
   private onFileSelected(event) {
@@ -147,6 +139,6 @@ export class ProductFormComponent implements OnInit, OnDestroy {
   }
 
   private productToLowerCase() {
-    this.product.name = this.product.name.charAt(0).toLowerCase() + this.product.name.substring(1)
+    this.product.name = this.product.name.charAt(0).toLowerCase() + this.product.name.substring(1);
   }
 }

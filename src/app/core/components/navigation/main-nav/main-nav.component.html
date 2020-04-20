@@ -64,13 +64,17 @@
 <ng-template #menu>
 
   <div [ngClass]="(isHandset$ | async) ? 'mobile-nav' : 'desktop-nav'">
-
+    <a class="nav-link" routerLink="/koszyk">
+      <span>Koszyk</span>
+      <span class="badge badge-warning badge-pill correct-position" *ngIf="cart$ | async as cart">
+        {{cart.totalItemsCount}}
+      </span>
+    </a>
     <div *ngFor="let link of menuLinks">
       <div style="outline: none;" routerLink="{{link.destination}}">
         <a>{{link.name}}</a>
       </div>
     </div>
-
     <a style="border: none; padding: 0">
       <profile-nav></profile-nav>
     </a>
