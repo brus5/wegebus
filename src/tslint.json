@@ -3,12 +3,14 @@
   "rules": {
     "directive-selector": [],
     "component-selector": [],
+    "forin": false,
     "variable-name": [
       false,
       "allow-leading-underscore"
     ],
+    "no-string-literal": false,
     "curly": [
-      true,
+      false,
       "as-needed"
     ],
     "prefer-const": false

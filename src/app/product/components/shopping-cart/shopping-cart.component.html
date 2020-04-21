@@ -7,31 +7,36 @@
     <table class="table">
       <thead>
       <tr>
-        <th>Produkt</th>
-        <th>Ilość</th>
-        <th>Cena</th>
+        <th style="width: 230px">Produkt</th>
+        <th class="text-center" style="width: 230px">Ilość</th>
+        <th class="text-right" style="width: 200px">Cena</th>
       </tr>
       </thead>
       <tbody>
-      <tr *ngFor="let productId of cart.productIds">
+      <tr *ngFor="let item of cart.items">
         <td>
-          {{cart.items[productId].product.name}}
+          {{item.name}}
         </td>
         <td>
-          {{cart.items[productId].quantity}}
+          <product-quantity [product]="item" [shopping-cart]="cart"></product-quantity>
         </td>
-        <td>
-          {{(cart.items[productId].product.price * cart.items[productId].quantity) | currency: 'PLN'}}
+        <td class="text-right">
+          {{(item.totalPrice) | currency: 'PLN'}}
         </td>
       </tr>
       </tbody>
       <tfoot>
       <tr>
-        <td></td>
-        <td></td>
-        <td>{{cart.totalPrice}}</td>
+        <th></th>
+        <th></th>
+        <th class="text-right">{{cart.totalPrice | currency: 'PLN'}}</th>
       </tr>
       </tfoot>
     </table>
+    <button
+      (click)="clearCart()"
+      class="btn btn-danger btn-sm">
+      Usuń wszystkie produkty
+    </button>
   </ng-container>
 </responsive-switcher>

@@ -10,6 +10,7 @@ import {ProductFilterComponent} from './components/product-filter/product-filter
 import {ProductCardComponent} from './components/product-card/product-card.component';
 import {ShoppingCartService} from './services/shopping-cart.service';
 import {ShoppingCartComponent} from './components/shopping-cart/shopping-cart.component';
+import {ProductQuantityComponent} from './components/product-quantity/product-quantity.component';
 
 import {SharedModule} from '../shared/shared.module';
 import {RouterModule} from '@angular/router';
@@ -30,7 +31,8 @@ import {AuthGuardService} from '../shared/services/auth-guard.service';
     ProductsCatalogComponent,
     ProductFilterComponent,
     ProductCardComponent,
-    ShoppingCartComponent
+    ShoppingCartComponent,
+    ProductQuantityComponent
   ],
   imports: [
     SharedModule,
