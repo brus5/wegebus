@@ -1,9 +1,10 @@
 //@import url('~bootstrap/dist/css/bootstrap.css');
 @import '~ngx-toastr/toastr';
 @import '~aos/dist/aos.css';
+@import "../node_modules/font-awesome/css/font-awesome.css";
 
 $font-color-accent: #777;
-$color-primary: #555;
+$color-primary: #92b418;
 $hover-link-color: #333;
 $h-margin: 16px 6px 6px 6px;
 
@@ -119,10 +120,35 @@ mat-select {
 }
 
 .mat-select-value > span {
-  color: $color-primary !important;
+  color: #555 !important;
   margin-left: 5px !important;
 }
 
+.list-group-item.active, .list-group-item.active:focus, .list-group-item.active:hover {
+  background-color: $color-primary;
+  border-color: $color-primary;
+}
+.btn-primary{
+  color:#fff;
+  background-color:#007bff;
+  border-color:#007bff}
+
+.btn-primary.focus, .btn-primary:focus {
+  color:#fff;
+  background-color:#007bff;
+  border-color:#122b40
+}
+
+.btn-primary:hover{
+  color:#fff;
+  background-color: #006bd4;
+  border-color: #006bd4}
+
+.btn-primary.active,.btn-primary:active,.open>.dropdown-toggle.btn-primary{
+  color:#fff;
+  background-color:#007bff;
+  background-image:none;
+  border-color:#204d74}
 
 //input[type="file"] {
 //  display: none;

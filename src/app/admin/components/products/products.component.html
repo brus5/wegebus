@@ -32,7 +32,7 @@
         </th>
         <th class="text-left">
           <a [routerLink]="['/produkt/' + productLink(product) + '/', product.key]">
-            {{toUpperCase(product.name)}}
+            {{product.name}}
           </a>
           <br/>
         </th>
@@ -42,7 +42,7 @@
             type="button" class="btn btn-default btn-sm"
             *ngIf="appUser$.isAdmin"
             [routerLink]="['/produkty/edycja', product.key]">
-            Edit
+            Edytuj
           </button>
         </th>
       </tr>

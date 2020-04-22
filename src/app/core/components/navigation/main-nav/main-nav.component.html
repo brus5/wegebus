@@ -35,12 +35,14 @@
           (click)="drawer.toggle()"
           *ngIf="isHandset$ | async"
         >
-
           <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
-
         </button>
 
-        <span [ngClass]="(isHandset$ | async) ? 'app-title-mobile app-title': 'app-title-desktop app-title'">{{appTitle}}</span>
+        <span
+          routerLink="/"
+          [ngClass]="(isHandset$ | async) ? 'app-title-mobile app-title' : 'app-title-desktop app-title'">
+            {{appTitle}}
+        </span>
 
         <span class="spacer"></span>
 
@@ -65,7 +67,7 @@
 
   <div [ngClass]="(isHandset$ | async) ? 'mobile-nav' : 'desktop-nav'">
     <a class="nav-link" routerLink="/koszyk">
-      <span>Koszyk</span>
+      <i class="fa fa-shopping-cart"></i>
       <span class="badge badge-warning badge-pill correct-position" *ngIf="cart$ | async as cart">
         {{cart.totalItemsCount}}
       </span>

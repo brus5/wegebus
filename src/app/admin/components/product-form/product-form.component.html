@@ -1,6 +1,6 @@
 <responsive-switcher>
   <h1>Dodaj nowy produkt</h1>
-  <form #form="ngForm">
+  <form #form="ngForm" (ngSubmit)="onAccept()">
     <div *ngIf="product; else noProduct">
       <div class="col-md-6">
         <div class="row">
@@ -72,9 +72,11 @@
         </div>
 
         <div class="row mt-10">
-          <button (click)="onAccept(); resetForm()"
-                  [disabled]="!form.valid || !product.imageUrl || !product.category"
-                  class="btn btn-primary">
+          <button
+            type="submit"
+            (click)="onAccept(); resetForm()"
+            [disabled]="!form.valid || !product.imageUrl || !product.category"
+            class="btn btn-primary">
             Zapisz
           </button>
           <button *ngIf="!productId; else deleteButton" (click)="resetForm()"

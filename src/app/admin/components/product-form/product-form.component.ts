@@ -83,7 +83,6 @@ export class ProductFormComponent implements OnInit, OnDestroy {
   }
 
   onAccept() {
-    this.productToLowerCase();
     if (this.productId) {
       this._productService.update(this.productId, this.product);
       this.navigateToProductsPage();
@@ -132,9 +131,5 @@ export class ProductFormComponent implements OnInit, OnDestroy {
 
   private noProduct() {
     this.product = null;
-  }
-
-  private productToLowerCase() {
-    this.product.name = this.product.name.charAt(0).toLowerCase() + this.product.name.substring(1);
   }
 }

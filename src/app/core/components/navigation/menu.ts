@@ -1,5 +1,4 @@
 export const NAV_LINKS = [
-  {name: 'Strona główna', destination: ''},
   {name: 'Produkty', destination: '/produkty'},
 ];
 export const TITLE = 'wegebus';

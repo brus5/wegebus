@@ -1,6 +1,6 @@
 {
   "name": "wegebus1",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "scripts": {
     "ng": "ng",
     "start": "npm install && npm run serve:ssr",
@@ -39,6 +39,7 @@
     "core-util-is": "^1.0.2",
     "express": "^4.15.2",
     "firebase": "^6.2.3",
+    "font-awesome": "^4.7.0",
     "hammerjs": "^2.0.8",
     "material-design-icons": "^3.0.1",
     "ng-simple-slideshow": "^1.2.9",

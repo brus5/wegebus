@@ -63,6 +63,9 @@
   .btn {
     background: linear-gradient(-60deg, #904e95, #e73c7e, #ee7752);
     border-color: transparent;
+    &:hover { cursor: pointer }
+    &:active { outline: none }
+    &:focus { outline: none }
   }
 }
 

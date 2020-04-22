@@ -20,4 +20,8 @@ export class ProductCardComponent {
   addToCart() {
     this._cartService.addToCart(this.product);
   }
+
+  toUpperCase(name: string) {
+    return name.charAt(0).toUpperCase() + name.substring(1);
+  }
 }

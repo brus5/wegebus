@@ -125,6 +125,9 @@ title {
   font-family: 'Indie Flower', cursive;
   font-weight: 800;
   letter-spacing: 4px;
+  &:hover { cursor: pointer }
+  &:active { outline: none }
+  &:focus { outline: none }
 }
 
 .position-fixed {

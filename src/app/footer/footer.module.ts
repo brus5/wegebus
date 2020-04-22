@@ -1,7 +1,6 @@
 import {NgModule} from '@angular/core';
 
-import {SharedModule} from '../shared/shared.module';
-import {FooterService} from './services/footer.service';
+import {SharedModule} from 'shared/shared.module';
 import {FooterComponent} from './components/footer/footer.component';
 import {RouterModule} from '@angular/router';
 
@@ -15,9 +14,6 @@ import {RouterModule} from '@angular/router';
   ],
   exports: [
     FooterComponent
-  ],
-  providers: [
-    FooterService
   ]
 })
 
