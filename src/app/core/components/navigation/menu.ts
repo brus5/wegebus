@@ -5,12 +5,11 @@ export const NAV_LINKS = [
 export const TITLE = 'wegebus';
 
 export const PROFILE_LINKS = [
-  {name: 'Opcje diety', destination: '/opcje-diety'},
-  {name: 'Godziny posiłków', destination: '/godziny-posilkow'},
+  {name: 'Moje zamówienia', destination: '/moje-zamowienia'},
   {name: 'Wyloguj', destination: '/logoff'},
 ];
 
 export const ADMIN_LINKS = [
-  {name: 'Poczekalnia produktów', destination: '/poczekalnia-produktow'},
-  {name: 'Dodaj newsa', destination: '/aktualnosci-dodaj'}
+  {name: 'Zamówienia klientów', destination: '/zamowienia-klientow'},
+  {name: 'Dodaj produkt', destination: '/produkty/nowy'}
 ];

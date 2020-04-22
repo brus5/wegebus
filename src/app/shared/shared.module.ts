@@ -12,10 +12,7 @@ import {RouterModule} from '@angular/router';
 
 import {ResponsiveComponent} from './components/responsive/responsive.component';
 import {DropdownListComponent} from './components/dropdown-list/dropdown-list.component';
-import {CalendarComponent} from './components/calendar/calendar.component';
 import {ProgressSpinnerComponent} from './components/progress-spinner/progress-spinner.component';
-import {TitleComponent} from './components/title/title.component';
-import {DescriptionComponent} from './components/description/description.component';
 
 import {FilterProductPipe} from './pipes/filterProduct.pipe';
 
@@ -26,15 +23,13 @@ import {UserService} from './services/user.service';
 import {AuthService} from './services/auth.service';
 import {ImageUploadService} from './services/image-upload.service';
 import {LinkService} from './services/link.service';
+import {OrderService} from './services/order.service';
 
 @NgModule({
   declarations: [
     ResponsiveComponent,
     DropdownListComponent,
-    CalendarComponent,
     ProgressSpinnerComponent,
-    TitleComponent,
-    DescriptionComponent,
 
     FilterProductPipe,
 
@@ -56,10 +51,7 @@ import {LinkService} from './services/link.service';
   exports: [
     ResponsiveComponent,
     DropdownListComponent,
-    CalendarComponent,
     ProgressSpinnerComponent,
-    TitleComponent,
-    DescriptionComponent,
 
     FilterProductPipe,
 
@@ -78,7 +70,8 @@ import {LinkService} from './services/link.service';
     UserService,
     AuthService,
     ImageUploadService,
-    LinkService
+    LinkService,
+    OrderService
   ]
 })
 

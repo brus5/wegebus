@@ -1,7 +1,7 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
 import {ProductService} from '../../services/product.service';
-import {Product} from '../../../shared/models/product';
-import {Subscription} from 'rxjs';
+import {Product} from 'shared/models/product';
+import {Observable, Subscription} from 'rxjs';
 import {ActivatedRoute} from '@angular/router';
 import 'rxjs/add/operator/switchMap';
 import {ShoppingCartService} from '../../services/shopping-cart.service';
@@ -17,6 +17,7 @@ export class ProductsCatalogComponent implements OnInit, OnDestroy {
   filteredProducts: Product[] = [];
   category: string;
   cart: any;
+  isMobile: Observable<boolean>;
 
   private productsSubscription: Subscription;
   private cartSubscription: Subscription;
@@ -44,8 +45,8 @@ export class ProductsCatalogComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy() {
-    this.productsSubscription.unsubscribe();
-    this.cartSubscription.unsubscribe();
+    if (this.productsSubscription) this.productsSubscription.unsubscribe();
+    if (this.cartSubscription) this.cartSubscription.unsubscribe();
   }
 
 

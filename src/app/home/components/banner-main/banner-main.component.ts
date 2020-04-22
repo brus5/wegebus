@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {Observable} from 'rxjs';
-import {NavService} from '../../../core/components/services/nav.service';
+import {NavService} from 'shared/services/nav.service';
 import AOS from 'aos';
 
 @Component({

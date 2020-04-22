@@ -1,14 +1,14 @@
 import {Component, ElementRef, Input, OnDestroy, OnInit, ViewChild} from '@angular/core';
 import {ProductService} from '../../services/product.service';
-import {Product} from '../../../shared/models/product';
-import {CategoryService} from '../../../shared/services/category.service';
 import {Subscription} from 'rxjs';
-import {ImageUploadService} from '../../../shared/services/image-upload.service';
 import {HttpEventType} from '@angular/common/http';
 import {FormControl, NgForm, Validators} from '@angular/forms';
 import {ActivatedRoute, Router} from '@angular/router';
-import {AppUser} from '../../../shared/models/app-user';
-import {AuthService} from '../../../shared/services/auth.service';
+import {AppUser} from 'shared/models/app-user';
+import {AuthService} from 'shared/services/auth.service';
+import {Product} from 'shared/models/product';
+import {CategoryService} from 'shared/services/category.service';
+import {ImageUploadService} from 'shared/services/image-upload.service';
 
 @Component({
   selector: 'product-form',
@@ -99,10 +99,6 @@ export class ProductFormComponent implements OnInit, OnDestroy {
     if (!confirm('Chcesz usunąć produkt?')) return;
     this._productService.remove(this.productId)
       .then(() => this.navigateToProductsPage());
-  }
-
-  get description() {
-    return 'W każdej chwili można edytować produkt lub usuwać.';
   }
 
   private onFileSelected(event) {

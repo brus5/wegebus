@@ -3,12 +3,18 @@
   <ng-container *ngIf="cart$ | async as cart">
     <p>
       Masz {{ cart.totalItemsCount }} produktów w koszyku.
+      <button
+        *ngIf="cart.items.length"
+        (click)="clearCart()"
+        class="btn btn-light btn-sm text-right">
+        Usuń wszystkie produkty
+      </button>
     </p>
     <table class="table">
       <thead>
       <tr>
-        <th style="width: 230px">Produkt</th>
-        <th class="text-center" style="width: 230px">Ilość</th>
+        <th style="width: 250px">Produkt</th>
+        <th class="text-center" style="width: 300px">Ilość</th>
         <th class="text-right" style="width: 200px">Cena</th>
       </tr>
       </thead>
@@ -33,10 +39,9 @@
       </tr>
       </tfoot>
     </table>
-    <button
-      (click)="clearCart()"
-      class="btn btn-danger btn-sm">
-      Usuń wszystkie produkty
-    </button>
+    <a
+      *ngIf="cart.items.length"
+      routerLink="/zamowienie"
+      class="btn btn-primary">Złóż złóż zamówienie</a>
   </ng-container>
 </responsive-switcher>

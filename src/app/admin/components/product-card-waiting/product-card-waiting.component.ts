@@ -1,7 +1,7 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {Product} from '../../../shared/models/product';
-import {ProductService} from '../../../product/services/product.service';
 import {ToastrService} from 'ngx-toastr';
+import {Product} from 'shared/models/product';
+import {ProductService} from '@app/product/services/product.service';
 
 @Component({
   selector: 'product-card-waiting',

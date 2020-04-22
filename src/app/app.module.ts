@@ -11,10 +11,6 @@ import {HomeModule} from './home/home.module';
 import {ProductModule} from './product/product.module';
 import {AdminModule} from './admin/admin.module';
 import {FooterModule} from './footer/footer.module';
-import {NewsModule} from './news/news.module';
-import {AboutusModule} from './aboutus/aboutus.module';
-import {HelpModule} from './help/help.module';
-import {ContactModule} from './contact/contact.module';
 import {BrowserModule} from '@angular/platform-browser';
 import {AppRoutingModule} from './app-routing.module';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
@@ -42,10 +38,6 @@ registerLocaleData(localePl);
     ProductModule,
     AdminModule,
     FooterModule,
-    NewsModule,
-    AboutusModule,
-    HelpModule,
-    ContactModule,
     ErrorModule,
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
     AppRoutingModule,

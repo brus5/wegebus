@@ -1,5 +1,5 @@
 import {NgModule} from '@angular/core';
-import {SharedModule} from '../shared/shared.module';
+import {SharedModule} from 'shared/shared.module';
 import {MatButtonModule, MatIconModule, MatListModule, MatMenuModule, MatSidenavModule, MatToolbarModule} from '@angular/material';
 import {RouterModule} from '@angular/router';
 
@@ -12,7 +12,7 @@ import {GoogleButtonComponent} from './components/google-button/google-button.co
 import {GoogleEmailComponent} from './components/google-email/google-email.component';
 import {RegisterEmailComponent} from './components/register-email/register-email.component';
 
-import {NavService} from './components/services/nav.service';
+import {NavService} from 'shared/services/nav.service';
 @NgModule({
   declarations: [
     LoginComponent,

@@ -1,7 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {Observable} from 'rxjs';
-import {NavService} from '../../../core/components/services/nav.service';
-import {NewsService} from '../../../news/services/news.service';
+import {NavService} from 'shared/services/nav.service';
 
 @Component({
   selector: 'app-home',
@@ -12,9 +11,7 @@ export class HomeComponent implements OnInit {
 
   public isHandset$: Observable<boolean>;
 
-  constructor(private _navService: NavService,
-              private _newsService: NewsService) {}
+  constructor(private _navService: NavService) {}
 
   ngOnInit() { this.isHandset$ = this._navService.isHandset$ }
-  get newsLoading() { return this._newsService.loading }
 }

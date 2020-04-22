@@ -1,0 +1,21 @@
+<responsive-switcher>
+  <h1>Zamówienia klientów</h1>
+  <table class="table">
+    <thead>
+    <tr>
+      <th>Klient</th>
+      <th>Data</th>
+      <th></th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let order of orders">
+      <td>{{ order.shipping.name }}</td>
+      <td>{{ order.datePlaced | date}}</td>
+      <td>
+        <a href="#">Wyświetl</a>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</responsive-switcher>

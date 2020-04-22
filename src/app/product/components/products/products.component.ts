@@ -1,13 +1,13 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
-import {Product} from '../../../shared/models/product';
 import {ProductService} from '../../services/product.service';
 import {Observable, Subscription} from 'rxjs';
-import {NavService} from '../../../core/components/services/nav.service';
-import {AuthService} from '../../../shared/services/auth.service';
 import {DataTableResource} from 'angular5-data-table';
-import {User} from '../../../shared/models/user';
-import {AppUser} from '../../../shared/models/app-user';
-import {LinkService} from '../../../shared/services/link.service';
+import {Product} from 'shared/models/product';
+import {NavService} from 'shared/services/nav.service';
+import {AuthService} from 'shared/services/auth.service';
+import {User} from 'shared/models/user';
+import {AppUser} from 'shared/models/app-user';
+import {LinkService} from 'shared/services/link.service';
 
 @Component({
   selector: 'products',

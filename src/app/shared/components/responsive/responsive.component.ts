@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {Observable} from 'rxjs';
-import {NavService} from '../../../core/components/services/nav.service';
+import {NavService} from '../../services/nav.service';
 
 @Component({
   selector: 'responsive-switcher',

@@ -10,7 +10,6 @@ import 'rxjs/add/observable/of';
 import {AngularFireAuth} from '@angular/fire/auth';
 import {AppUser} from '../models/app-user';
 
-
 @Injectable({
   providedIn: 'root'
 })

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {Observable} from 'rxjs';
-import {NavService} from '../../../core/components/services/nav.service';
+import {NavService} from 'shared/services/nav.service';
 import {NAV_LINKS} from '../../../core/components/navigation/menu';
 import {version} from '../../../../../package.json';
 

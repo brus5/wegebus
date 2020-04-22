@@ -3,12 +3,13 @@ import {BreakpointObserver, Breakpoints} from '@angular/cdk/layout';
 import {Observable} from 'rxjs';
 import {map} from 'rxjs/operators';
 import {HammerInput, MatSidenav} from '@angular/material';
-import {AuthService} from '../../../../shared/services/auth.service';
-import {AppUser} from '../../../../shared/models/app-user';
 import {NAV_LINKS, TITLE} from '../menu';
-import {NavService} from '../../services/nav.service';
 import {DOCUMENT} from '@angular/common';
-import {ShoppingCartService} from '../../../../product/services/shopping-cart.service';
+import {ShoppingCartService} from '@app/product/services/shopping-cart.service';
+
+import {NavService} from 'shared/services/nav.service';
+import {AuthService} from 'shared/services/auth.service';
+import {AppUser} from 'shared/models/app-user';
 
 @Component({
   selector: 'main-nav',
@@ -18,7 +19,6 @@ import {ShoppingCartService} from '../../../../product/services/shopping-cart.se
 export class MainNavComponent implements OnInit {
 
   public isHandset$: Observable<boolean>;
-  shoppingCartItemCount: number;
   cart$;
 
   @ViewChild(MatSidenav, {static: true}) sidenav: MatSidenav;

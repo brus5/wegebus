@@ -1,9 +1,9 @@
 import {Component, OnInit} from '@angular/core';
-import {AppUser} from '../../../../shared/models/app-user';
-import {AuthService} from '../../../../shared/services/auth.service';
 import {ADMIN_LINKS, PROFILE_LINKS} from '../menu';
 import {Observable} from 'rxjs';
-import {NavService} from '../../services/nav.service';
+import {NavService} from 'shared/services/nav.service';
+import {AppUser} from 'shared/models/app-user';
+import {AuthService} from 'shared/services/auth.service';
 
 @Component({
   selector: 'profile-nav',

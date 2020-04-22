@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {AuthService} from '../../../shared/services/auth.service';
-import {Observable} from 'rxjs';
-import * as firebase from 'firebase';
-import {AppUser} from '../../../shared/models/app-user';
+import {AuthService} from 'shared/services/auth.service';
+import {AppUser} from 'shared/models/app-user';
 
 @Component({
   selector: 'google-button',

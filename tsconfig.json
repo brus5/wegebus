@@ -1,12 +1,10 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
-    "baseUrl": "./",
     "outDir": "./dist/out-tsc",
     "sourceMap": true,
     "declaration": false,
     "module": "es2015",
-    "moduleResolution": "node",
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "importHelpers": true,
@@ -18,6 +16,13 @@
     "lib": [
       "es2018",
       "dom"
-    ]
+    ],
+    "moduleResolution": "node",
+    "baseUrl": "./src",
+    "paths": {
+      "@app/*": ["app/*"],
+      "shared/*": ["app/shared/*"],
+      "assets/*": ["src/assets/*"]
+    }
   }
 }

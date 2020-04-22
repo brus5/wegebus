@@ -4,18 +4,15 @@ import {Routes, RouterModule, Router} from '@angular/router';
 import {HomeComponent} from './home/components/home/home.component';
 import {LoginComponent} from './core/components/login/login.component';
 import {LogoffComponent} from './core/components/logoff/logoff.component';
-import {AuthGuardService} from './shared/services/auth-guard.service';
-import {ProductsComponent} from './product/components/products/products.component';
-import {ProductsWaitingRoomComponent} from './admin/components/products-waiting-room/products-waiting-room.component';
-import {AdminGuardService} from './shared/services/admin-guard.service';
-import {NewsFormComponent} from './news/components/news-form/news-form.component';
-import {AboutusComponent} from './aboutus/components/aboutus/aboutus.component';
-import {ContactComponent} from './contact/components/contact/contact.component';
-import {HelpComponent} from './help/components/help/help.component';
+import {AuthGuardService} from 'shared/services/auth-guard.service';
+import {AdminGuardService} from 'shared/services/admin-guard.service';
 import {ErrorComponent} from './error/components/error/error.component';
 import {RegisterEmailComponent} from './core/components/register-email/register-email.component';
 import {ProductsCatalogComponent} from './product/components/products-catalog/products-catalog.component';
 import {ShoppingCartComponent} from './product/components/shopping-cart/shopping-cart.component';
+import {CheckOutComponent} from './product/components/check-out/check-out.component';
+import {AdminOrdersComponent} from './admin/components/admin-orders/admin-orders.component';
+import {MyOrdersComponent} from './product/components/my-orders/my-orders.component';
 
 const routes: Routes = [
   {
@@ -38,31 +35,16 @@ const routes: Routes = [
     component: LogoffComponent
   },
   {
-    path: 'poczekalnia-produktow',
-    component: ProductsWaitingRoomComponent,
+    path: 'zamowienia-klientow',
+    component: AdminOrdersComponent,
     canActivate: [AuthGuardService, AdminGuardService],
-    data: {title: 'Poczekalnia produktów'}
+    data: {title: 'Zarządzenie zamówieniami'}
   },
   {
-    path: 'aktualnosci-dodaj',
-    component: NewsFormComponent,
-    canActivate: [AuthGuardService, AdminGuardService],
-    data: {title: 'Napisz aktualność'}
-  },
-  {
-    path: 'o-mnie',
-    component: AboutusComponent,
-    data: {title: 'O mnie'}
-  },
-  {
-    path: 'kontakt',
-    component: ContactComponent,
-    data: {title: 'Kontakt'}
-  },
-  {
-    path: 'pomoc',
-    component: HelpComponent,
-    data: {title: 'Pomoc'}
+    path: 'moje-zamowienia',
+    component: MyOrdersComponent,
+    canActivate: [AuthGuardService],
+    data: {title: 'Moje zamówienia'}
   },
   {
     path: 'rejestracja',
@@ -72,6 +54,11 @@ const routes: Routes = [
   {
     path: 'koszyk',
     component: ShoppingCartComponent,
+    data: {title: 'Koszyk'}
+  },
+  {
+    path: 'zamowienie',
+    component: CheckOutComponent,
     data: {title: 'Koszyk'}
   },
   {
