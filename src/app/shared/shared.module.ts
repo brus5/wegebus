@@ -13,6 +13,8 @@ import {RouterModule} from '@angular/router';
 import {ResponsiveComponent} from './components/responsive/responsive.component';
 import {DropdownListComponent} from './components/dropdown-list/dropdown-list.component';
 import {ProgressSpinnerComponent} from './components/progress-spinner/progress-spinner.component';
+import {ProductCardComponent} from 'shared/components/product-card/product-card.component';
+import {ProductQuantityComponent} from 'shared/components/product-quantity/product-quantity.component';
 
 import {FilterProductPipe} from './pipes/filterProduct.pipe';
 
@@ -30,6 +32,8 @@ import {OrderService} from './services/order.service';
     ResponsiveComponent,
     DropdownListComponent,
     ProgressSpinnerComponent,
+    ProductCardComponent,
+    ProductQuantityComponent,
 
     FilterProductPipe,
 
@@ -52,6 +56,8 @@ import {OrderService} from './services/order.service';
     ResponsiveComponent,
     DropdownListComponent,
     ProgressSpinnerComponent,
+    ProductCardComponent,
+    ProductQuantityComponent,
 
     FilterProductPipe,
 

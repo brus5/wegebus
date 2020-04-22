@@ -8,7 +8,7 @@ import {SharedModule} from './shared/shared.module';
 import {MaterialModule} from './shared/material.module';
 import {ThirdPartyModule} from './shared/third.party.module';
 import {HomeModule} from './home/home.module';
-import {ProductModule} from './product/product.module';
+import {ProductModule} from './shipping/product.module';
 import {AdminModule} from './admin/admin.module';
 import {FooterModule} from './footer/footer.module';
 import {BrowserModule} from '@angular/platform-browser';

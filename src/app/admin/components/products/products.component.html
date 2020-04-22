@@ -1,6 +1,6 @@
 <div *ngIf="!productsLoading; else loadingProducts">
   <div [ngClass]="(isHandset$ | async) ? 'mobile-content' : 'desktop-content'">
-
+    <h1>Zarządzanie produktami</h1>
     <a
       type="button"
       class="btn btn-primary"
@@ -68,8 +68,3 @@
     <progress-spinner></progress-spinner>
   </div>
 </ng-template>
-
-<div *ngIf="!productsLoading">
-  <app-footer></app-footer>
-</div>
-

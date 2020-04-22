@@ -1,5 +1,5 @@
 import {Component, ElementRef, Input, OnDestroy, OnInit, ViewChild} from '@angular/core';
-import {ProductService} from '../../services/product.service';
+import {ProductService} from '../../../shipping/services/product.service';
 import {Subscription} from 'rxjs';
 import {HttpEventType} from '@angular/common/http';
 import {FormControl, NgForm, Validators} from '@angular/forms';

@@ -11,5 +11,6 @@ export const PROFILE_LINKS = [
 
 export const ADMIN_LINKS = [
   {name: 'Zamówienia klientów', destination: '/zamowienia-klientow'},
-  {name: 'Dodaj produkt', destination: '/produkty/nowy'}
+  {name: 'Dodaj produkt', destination: '/produkty/nowy'},
+  {name: 'Zarządzaj produktami', destination: '/zarzadzanie-produktami'}
 ];

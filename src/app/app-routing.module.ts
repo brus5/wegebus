@@ -5,14 +5,15 @@ import {HomeComponent} from './home/components/home/home.component';
 import {LoginComponent} from './core/components/login/login.component';
 import {LogoffComponent} from './core/components/logoff/logoff.component';
 import {AuthGuardService} from 'shared/services/auth-guard.service';
-import {AdminGuardService} from 'shared/services/admin-guard.service';
+import {AdminAuthGuardService} from '@app/admin/services/admin-auth-guard.service';
 import {ErrorComponent} from './error/components/error/error.component';
 import {RegisterEmailComponent} from './core/components/register-email/register-email.component';
-import {ProductsCatalogComponent} from './product/components/products-catalog/products-catalog.component';
-import {ShoppingCartComponent} from './product/components/shopping-cart/shopping-cart.component';
-import {CheckOutComponent} from './product/components/check-out/check-out.component';
+import {ProductsCatalogComponent} from './shipping/components/products-catalog/products-catalog.component';
+import {ShoppingCartComponent} from './shipping/components/shopping-cart/shopping-cart.component';
+import {CheckOutComponent} from './shipping/components/check-out/check-out.component';
 import {AdminOrdersComponent} from './admin/components/admin-orders/admin-orders.component';
-import {MyOrdersComponent} from './product/components/my-orders/my-orders.component';
+import {MyOrdersComponent} from './shipping/components/my-orders/my-orders.component';
+import {ProductsComponent} from '@app/admin/components/products/products.component';
 
 const routes: Routes = [
   {
@@ -37,8 +38,14 @@ const routes: Routes = [
   {
     path: 'zamowienia-klientow',
     component: AdminOrdersComponent,
-    canActivate: [AuthGuardService, AdminGuardService],
+    canActivate: [AuthGuardService, AdminAuthGuardService],
     data: {title: 'Zarządzenie zamówieniami'}
+  },
+  {
+    path: 'zarzadzanie-produktami',
+    component: ProductsComponent,
+    canActivate: [AuthGuardService, AdminAuthGuardService],
+    data: {title: 'Zarządzenie produktami'}
   },
   {
     path: 'moje-zamowienia',

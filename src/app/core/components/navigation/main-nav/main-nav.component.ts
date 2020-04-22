@@ -5,7 +5,7 @@ import {map} from 'rxjs/operators';
 import {HammerInput, MatSidenav} from '@angular/material';
 import {NAV_LINKS, TITLE} from '../menu';
 import {DOCUMENT} from '@angular/common';
-import {ShoppingCartService} from '@app/product/services/shopping-cart.service';
+import {ShoppingCartService} from 'shared/services/shopping-cart.service';
 
 import {NavService} from 'shared/services/nav.service';
 import {AuthService} from 'shared/services/auth.service';

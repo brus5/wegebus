@@ -4,7 +4,7 @@ import {Product} from 'shared/models/product';
 import {Observable, Subscription} from 'rxjs';
 import {ActivatedRoute} from '@angular/router';
 import 'rxjs/add/operator/switchMap';
-import {ShoppingCartService} from '../../services/shopping-cart.service';
+import {ShoppingCartService} from 'shared/services/shopping-cart.service';
 
 @Component({
   selector: 'app-products-catalog',

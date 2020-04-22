@@ -1,5 +1,5 @@
 import {Injectable} from '@angular/core';
-import {ShoppingCartService} from '../../product/services/shopping-cart.service';
+import {ShoppingCartService} from './shopping-cart.service';
 import {AngularFireDatabase} from '@angular/fire/database';
 import {map} from 'rxjs/operators';
 
