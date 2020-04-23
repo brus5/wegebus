@@ -21,7 +21,11 @@
       <tbody>
       <tr *ngFor="let item of cart.items">
         <td>
-          {{item.name}}
+          <a
+            class="item-name"
+            [routerLink]="['/produkt/' + productLink(item) + '/', item.key]">
+            {{item.name}}
+          </a>
         </td>
         <td>
           <product-quantity [product]="item" [shopping-cart]="cart"></product-quantity>

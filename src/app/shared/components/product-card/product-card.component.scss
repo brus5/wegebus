@@ -5,3 +5,16 @@
 .card-footer {
   padding: 0;
 }
+
+.card-title {
+  font-weight: 400;
+  margin: 12px auto auto 12px;
+  &:hover {cursor: pointer}
+  &:active { outline: none }
+  &:focus { outline: none }
+}
+
+.card-body, p, .card-price {
+  font-weight: 300;
+  margin: -20px auto -20px -12px;
+}

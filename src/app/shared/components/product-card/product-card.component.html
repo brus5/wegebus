@@ -1,8 +1,10 @@
 <div class="card">
   <img *ngIf="product.imageUrl" class="card-img-top" [src]="product.imageUrl" alt="Card image cap" style="width: 100%">
+  <h4
+    [routerLink]="['/produkt/' + productLink(product) + '/', product.key]"
+    class="card-title">{{product.name}}</h4>
   <div class="card-body">
-    <h5 class="card-title">{{product.name}}</h5>
-    <p class="card-text">{{product.price | currency: 'PLN'}}</p>
+    <p class="card-price text-accent">{{product.price | currency: 'PLN'}}</p>
   </div>
   <div *ngIf="showActions && shoppingCart" class="card-footer">
     <button

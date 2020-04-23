@@ -1,13 +1,13 @@
-<div *ngIf="!productsLoading; else loadingProducts">
+<div>
   <div [ngClass]="(isHandset$ | async) ? 'mobile-content' : 'desktop-content'">
     <h1>Zarządzanie produktami</h1>
-    <a
+    <button
       type="button"
       class="btn btn-primary"
       *ngIf="appUser$"
       routerLink="/produkty/nowy">
       Nowy Produkt
-    </a>
+    </button>
     <input
         #query
         (keyup)="filter(query.value)"

@@ -3,6 +3,7 @@ import {ShoppingCartService} from '../../services/shopping-cart.service';
 
 import {Product} from 'shared/models/product';
 import {ShoppingCart} from 'shared/models/shopping-cart';
+import {LinkService} from 'shared/services/link.service';
 
 @Component({
   selector: 'product-card',
@@ -15,7 +16,8 @@ export class ProductCardComponent {
   @Input('show-actions') showActions = true;
   @Input('shopping-cart') shoppingCart: ShoppingCart;
 
-  constructor(private _cartService: ShoppingCartService) {}
+  constructor(private _cartService: ShoppingCartService,
+              private _linkService: LinkService) {}
 
   addToCart() {
     this._cartService.addToCart(this.product);
@@ -23,5 +25,9 @@ export class ProductCardComponent {
 
   toUpperCase(name: string) {
     return name.charAt(0).toUpperCase() + name.substring(1);
+  }
+
+  productLink(product: Product): string {
+    return this._linkService.cutLink(product.name);
   }
 }

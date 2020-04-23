@@ -44,10 +44,6 @@ export class ProductDetailsComponent implements OnInit, OnDestroy {
     return this._linkService.cutLink(link);
   }
 
-  productName() {
-    return this.product.name.charAt(0).toUpperCase() + this.product.name.slice(1);
-  }
-
   private initProduct(prod: Product): Observable<any> {
     this.product = prod;
     return Observable.of(prod);
