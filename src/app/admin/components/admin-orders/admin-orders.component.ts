@@ -1,6 +1,6 @@
 
 import { Component} from '@angular/core';
-import {OrderService} from '../../../shared/services/order.service';
+import {OrderService} from 'shared/services/order.service';
 
 @Component({
   selector: 'admin-orders',
@@ -8,10 +8,9 @@ import {OrderService} from '../../../shared/services/order.service';
   styleUrls: ['./admin-orders.component.css']
 })
 export class AdminOrdersComponent {
-  orders;
+  orders$;
 
   constructor(private orderService: OrderService) {
-    orderService.getOrders().valueChanges()
-      .subscribe(orders => this.orders = orders);
+    this.orders$ = orderService.getOrders();
   }
 }

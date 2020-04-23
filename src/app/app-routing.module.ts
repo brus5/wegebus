@@ -13,7 +13,7 @@ import {ShoppingCartComponent} from './shipping/components/shopping-cart/shoppin
 import {CheckOutComponent} from './shipping/components/check-out/check-out.component';
 import {AdminOrdersComponent} from './admin/components/admin-orders/admin-orders.component';
 import {MyOrdersComponent} from './shipping/components/my-orders/my-orders.component';
-import {ProductsComponent} from '@app/admin/components/products/products.component';
+import {ProductsManagementComponent} from '@app/admin/components/products-management/products-management.component';
 
 const routes: Routes = [
   {
@@ -43,7 +43,7 @@ const routes: Routes = [
   },
   {
     path: 'zarzadzanie-produktami',
-    component: ProductsComponent,
+    component: ProductsManagementComponent,
     canActivate: [AuthGuardService, AdminAuthGuardService],
     data: {title: 'Zarządzenie produktami'}
   },

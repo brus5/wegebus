@@ -11,10 +11,10 @@ import {LinkService} from 'shared/services/link.service';
 
 @Component({
   selector: 'products',
-  templateUrl: './products.component.html',
-  styleUrls: ['./products.component.scss']
+  templateUrl: './products-management.component.html',
+  styleUrls: ['./products-management.component.scss']
 })
-export class ProductsComponent implements OnInit, OnDestroy {
+export class ProductsManagementComponent implements OnInit, OnDestroy {
   isHandset$: Observable<boolean>;
   config = {
     itemsPerPage: 7,

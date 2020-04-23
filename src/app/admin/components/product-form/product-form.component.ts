@@ -27,7 +27,7 @@ export class ProductFormComponent implements OnInit, OnDestroy {
   @Input() productId: string;
 
   appUser$ = {} as AppUser;
-  product = {} as Product;
+  product = {name: ''} as Product;
   categories: Array<string> = [];
   categories$;
 

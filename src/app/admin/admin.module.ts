@@ -7,13 +7,13 @@ import {RouterModule} from '@angular/router';
 import {AuthGuardService} from 'shared/services/auth-guard.service';
 import {MaterialModule} from 'shared/material.module';
 import {ReactiveFormsModule} from '@angular/forms';
-import {ProductsComponent} from '@app/admin/components/products/products.component';
+import {ProductsManagementComponent} from '@app/admin/components/products-management/products-management.component';
 
 @NgModule({
   declarations: [
     AdminOrdersComponent,
     ProductFormComponent,
-    ProductsComponent,
+    ProductsManagementComponent,
   ],
   exports: [],
   providers: [AdminAuthGuardService],

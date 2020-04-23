@@ -1,0 +1,20 @@
+<responsive-switcher>
+  <h2>Zamówienie</h2>
+  <div *ngFor="let cart of cart$ | async">
+    <p>Data wystawienia: {{cart.datePlaced | date}}</p>
+    <p>Lista produktów:</p>
+    <div *ngFor="let item of cart.items">
+      <p>Nazwa: {{item.product.name}}</p>
+      <p>Cena: {{item.product.price}}</p>
+      <p>Ilość: {{item.quantity}}</p>
+      <p>W sumie: {{item.totalPrice}}</p>
+    </div>
+    <div>
+      <p>Nazwa: {{cart.shipping.name}}</p>
+      <p>Ulica: {{cart.shipping.addressLine1}}</p>
+      <p>Miasto: {{cart.shipping.city}}</p>
+      <p>Telefon: {{cart.shipping.phoneNumber}}</p>
+    </div>
+    <pre>{{cart | json}}</pre>
+  </div>
+</responsive-switcher>

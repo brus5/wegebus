@@ -18,6 +18,7 @@ import {ReactiveFormsModule} from '@angular/forms';
 import {FooterModule} from '../footer/footer.module';
 
 import {ProductService} from './services/product.service';
+import { OrderDetailsComponent } from './components/order-details/order-details.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import {ProductService} from './services/product.service';
     ShippingFormComponent,
     ShoppingCartSummaryComponent,
     OrderSuccessComponent,
-    MyOrdersComponent
+    MyOrdersComponent,
+    OrderDetailsComponent
   ],
   imports: [
     SharedModule,
@@ -47,6 +49,11 @@ import {ProductService} from './services/product.service';
         component: OrderSuccessComponent,
         data: { title: 'Zamówienie złożone' }
       },
+      {
+        path: 'zamowienie/:id',
+        component: OrderDetailsComponent,
+        data: { title: 'Szczegóły zamówienia' }
+      }
     ])
   ],
   exports: [],
