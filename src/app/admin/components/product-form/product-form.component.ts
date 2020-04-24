@@ -27,7 +27,7 @@ export class ProductFormComponent implements OnInit, OnDestroy {
   @Input() productId: string;
 
   appUser$ = {} as AppUser;
-  product = {name: ''} as Product;
+  product = {name: '', available: false} as Product;
   categories: Array<string> = [];
   categories$;
 
@@ -131,5 +131,9 @@ export class ProductFormComponent implements OnInit, OnDestroy {
 
   private noProduct() {
     this.product = null;
+  }
+
+  changeAvailability() {
+    this.product.available = !this.product.available;
   }
 }
