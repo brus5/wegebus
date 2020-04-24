@@ -1,20 +1,63 @@
 <responsive-switcher>
   <h2>Zamówienie</h2>
-  <div *ngFor="let cart of cart$ | async">
-    <p>Data wystawienia: {{cart.datePlaced | date}}</p>
-    <p>Lista produktów:</p>
-    <div *ngFor="let item of cart.items">
-      <p>Nazwa: {{item.product.name}}</p>
-      <p>Cena: {{item.product.price}}</p>
-      <p>Ilość: {{item.quantity}}</p>
-      <p>W sumie: {{item.totalPrice}}</p>
+  <div class="card" *ngIf="order$ | async as o">
+    <div class="card-body">
+      <h5 class="card-title">Podsumowanie</h5>
+      <p class="card-text">Zamówiono {{o.orderItems.length}} produktów</p>
+      <ul class="list-group list-group-flush">
+        <li *ngFor="let order of o.orderItems" class="list-group-item">
+          {{order.quantity}} x {{order.product.name}}
+          <div class="float-right">
+            {{order.totalPrice | currency: 'PLN'}}
+          </div>
+        </li>
+        <li class="list-group-item font-weight-bold">
+          Suma
+          <div class="float-right">
+            {{o.totalPrice | currency: 'PLN'}}
+          </div>
+        </li>
+      </ul>
     </div>
-    <div>
-      <p>Nazwa: {{cart.shipping.name}}</p>
-      <p>Ulica: {{cart.shipping.addressLine1}}</p>
-      <p>Miasto: {{cart.shipping.city}}</p>
-      <p>Telefon: {{cart.shipping.phoneNumber}}</p>
+
+    <div class="card-body">
+      <h5 class="card-title">Dane adresowe</h5>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item">
+          Nazwa:
+          <div class="float-right">
+            {{o.shipping.name}}
+          </div>
+        </li>
+        <li class="list-group-item">
+          Adres:
+          <div class="float-right">
+            {{o.shipping.addressLine1}}
+          </div>
+        </li>
+        <li class="list-group-item">
+          Miasto:
+          <div class="float-right">
+            {{o.shipping.city}}
+          </div>
+        </li>
+        <li class="list-group-item">
+          Telefon:
+          <a href="tel: {{o.shipping.phoneNumber}}" class="float-right">
+            {{o.shipping.phoneNumber}}
+          </a>
+        </li>
+      </ul>
     </div>
-    <pre>{{cart | json}}</pre>
+  </div>
+  <div *ngIf="appUser$ | async as user">
+    <div class="float-right">
+      <button
+          *ngIf="user.isAdmin"
+          class="btn btn-danger"
+          (click)="deleteOrder()">
+        Usuń
+      </button>
+    </div>
   </div>
 </responsive-switcher>

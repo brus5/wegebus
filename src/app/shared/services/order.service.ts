@@ -3,8 +3,9 @@ import {ShoppingCartService} from './shopping-cart.service';
 import {AngularFireDatabase} from '@angular/fire/database';
 import {map} from 'rxjs/operators';
 import {Observable} from 'rxjs';
-import {ShoppingCart} from 'shared/models/shopping-cart';
 import 'rxjs/add/operator/map';
+import {Order} from 'shared/models/order';
+import {Orders} from 'shared/models/orders';
 
 @Injectable({
   providedIn: 'root'
@@ -22,13 +23,18 @@ export class OrderService {
     return result;
   }
 
-  getOrderss() {
-    return this.db.list('/orders');
+  async getOrderById(cartId: string): Promise<Observable<Orders>> {
+    return this.db.object('/orders/' + cartId)
+      .valueChanges().map(x => x ? new Orders(x['shipping'], x['items'], x['userId']) : null);
+  }
+
+  remove(cartId: string) {
+    return this.db.list('/orders/' + cartId).remove();
   }
 
   getOrders() {
     return this.db.list('/orders',
-      ref => ref.orderByChild('userId'))
+      ref => ref.orderByChild('datePlaced'))
       .snapshotChanges().pipe(
         map(actions => (
           actions.map(action => (
@@ -40,7 +46,7 @@ export class OrderService {
 
   getOrdersByUser(userId: string) {
     return this.db.list('/orders',
-        ref => ref.orderByChild('userId').equalTo(userId))
+      ref => ref.orderByChild('userId').equalTo(userId))
       .snapshotChanges().pipe(
         map(actions => (
           actions.map(action => (
@@ -48,18 +54,5 @@ export class OrderService {
           ))
         ))
       );
-  }
-
-  getOder(orderId: string)  {
-    // return this.db.list('/orders/' + orderId).valueChanges();
-    return this.db.list('/orders',
-      ref => ref.orderByKey().equalTo(orderId))
-      .snapshotChanges().pipe(
-        map(actions => (
-          actions.map(action => (
-            {key: action.payload.key, ...action.payload.val()}
-          ))
-        ))
-      )
   }
 }
