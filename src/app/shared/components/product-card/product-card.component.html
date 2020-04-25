@@ -1,10 +1,33 @@
 <div class="card">
-  <img *ngIf="product.imageUrl" class="card-img-top" [src]="product.imageUrl" alt="Card image cap" style="width: 100%">
+  <img
+    *ngIf="product.imageUrl"
+    [src]="product.imageUrl"
+    (click)="goToDetails()"
+    class="card-img-top"
+    alt="Card image cap"
+    style="width: 100%"
+  >
   <h4
-    [routerLink]="['/produkt/' + productLink(product) + '/', product.key]"
-    class="card-title">{{product.name}}</h4>
+    (click)="goToDetails()"
+    class="card-title"
+  >
+    {{product.name}}
+  </h4>
   <div class="card-body">
-    <p class="card-price text-accent">{{product.price | currency: 'PLN'}}</p>
+    <p
+      *ngIf="product.available; else productGrowing"
+      class="card-price text-accent"
+    >
+      {{product.price | currency: 'PLN'}}
+    </p>
+    <ng-template #productGrowing>
+      <p
+        *ngIf="product.name"
+        class="card-price text-accent text-muted"
+      >
+        Produkt rośnie na naszym polu
+      </p>
+    </ng-template>
   </div>
   <div *ngIf="showActions && shoppingCart" class="card-footer">
     <button

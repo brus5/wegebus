@@ -6,15 +6,23 @@
   padding: 0;
 }
 
+.card {
+  & img, .card-title {
+    &:hover {cursor: pointer}
+    &:active { outline: none }
+    &:focus { outline: none }
+  }
+
+}
+
 .card-title {
   font-weight: 400;
   margin: 12px auto auto 12px;
-  &:hover {cursor: pointer}
-  &:active { outline: none }
-  &:focus { outline: none }
+  z-index: 10 !important;
 }
 
 .card-body, p, .card-price {
   font-weight: 300;
   margin: -20px auto -20px -12px;
+  z-index: 5 !important;
 }

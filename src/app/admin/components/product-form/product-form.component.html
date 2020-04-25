@@ -1,5 +1,10 @@
 <responsive-switcher>
-  <h1>Dodaj nowy produkt</h1>
+  <h1 *ngIf="product; else editProduct">
+    Dodaj nowy produkt
+  </h1>
+  <ng-template #editProduct>
+   Edytuj produkt
+  </ng-template>
   <form #form="ngForm">
     <div *ngIf="product; else noProduct">
       <div class="col-md-6">
@@ -71,7 +76,9 @@
         </textarea>
         </div>
 
-        <mat-checkbox (change)="changeAvailability()">
+        <mat-checkbox
+          [checked]="product.available"
+          (change)="changeAvailability()">
           Dostępność
         </mat-checkbox>
 

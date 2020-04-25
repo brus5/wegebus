@@ -4,6 +4,7 @@ import {ShoppingCartService} from '../../services/shopping-cart.service';
 import {Product} from 'shared/models/product';
 import {ShoppingCart} from 'shared/models/shopping-cart';
 import {LinkService} from 'shared/services/link.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'product-card',
@@ -17,7 +18,9 @@ export class ProductCardComponent {
   @Input('shopping-cart') shoppingCart: ShoppingCart;
 
   constructor(private _cartService: ShoppingCartService,
-              private _linkService: LinkService) {}
+              private _router: Router,
+              private _linkService: LinkService) {
+  }
 
   addToCart() {
     this._cartService.addToCart(this.product);
@@ -29,5 +32,11 @@ export class ProductCardComponent {
 
   productLink(product: Product): string {
     return this._linkService.cutLink(product.name);
+  }
+
+  goToDetails() {
+    this._router.navigate(['/produkt/'
+    + this.productLink(this.product)
+    + '/', this.product.key]);
   }
 }
